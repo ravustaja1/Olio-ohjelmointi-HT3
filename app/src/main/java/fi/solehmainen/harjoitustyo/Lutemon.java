@@ -37,4 +37,25 @@ public class Lutemon implements Serializable {
 
         return id;
     }
+
+    public void defense(Lutemon lutemon) {
+        // Toiminnallisuus tänne
+    }
+
+    public int attack() {
+        int dmg = 0; // Laitoin nollaksi, koska valittaa, että variablea ei ole alustettu.
+        // Toiminnallisuus tänne. Tarkoituksena palauttaa damagea tehty int arvo.
+        // Tähän voisi esim käyttää sitä math -kirjastoa, että onko vaikka jokin tietty % -mahdollisuus tehdä tupla dmg tms?
+        return dmg;
+    }
+
+    public int getNumberOfCreatedLutemons() {
+        int size;
+
+        size = Storage.getInstance().lutemonHashMap.size();
+
+        return size;
+    }
+
+
 }
