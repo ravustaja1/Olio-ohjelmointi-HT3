@@ -50,14 +50,6 @@ public class Storage {
         }
     }
 
-    public void saveLutemons() {
-
-    }
-
-    public void loadLutemons() {
-
-    }
-
     public void loadLutemons(Context context) {
         try {
             ObjectInputStream userReader = new ObjectInputStream(context.openFileInput("lutemons.data"));
