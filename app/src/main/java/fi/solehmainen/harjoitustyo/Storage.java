@@ -26,13 +26,16 @@ public class Storage {
         return storage;
     }
 
-    // Mitähän vikaa tässä on, kun toi name viittaa tonne ylös
+    /* Tätä luokkaa en oikein ymmärrä. Onko tässä siis tarkoitus luoda se Olio, kun esim Homessa:kin on createLutemon, joka ottaa sisäänsä ja palauttaa lutemonin?
     public Lutemon addLutemon() {
-        Lutemon lutemon = new Lutemon(String name, String color, int attack, int defense, int experience, int health, int maxHealth);
+        String name, color;
+        int attack, defense, experience, health, maxHealth;
+        Lutemon lutemon = new Lutemon(name, color, attack, defense, experience, health, maxHealth);
 
         // Tähän pitää muuttaa lopuksi luotu Lutemon
         return lutemon;
     }
+    */
 
     public Lutemon getLutemon(int id) {
 
@@ -57,7 +60,7 @@ public class Storage {
 
     public void loadLutemons(Context context) {
         try {
-            ObjectInputStream userReader = new ObjectInputStream(context.openFileInput("users.data"));
+            ObjectInputStream userReader = new ObjectInputStream(context.openFileInput("lutemons.data"));
             lutemonHashMap = (HashMap<Integer, Lutemon>) userReader.readObject();
             userReader.close();
         } catch (FileNotFoundException e) {
@@ -74,7 +77,7 @@ public class Storage {
 
     public void saveLutemons(Context context) {
         try {
-            ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("users.data", Context.MODE_PRIVATE));
+            ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("lutemons.data", Context.MODE_PRIVATE));
             userWriter.writeObject(lutemonHashMap);
             userWriter.close();
         } catch (IOException e) {
