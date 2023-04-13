@@ -19,7 +19,7 @@ public class Lutemon implements Serializable {
 
     private static int idCounter = 0;
 
-    public Lutemon(String name, String color, int attack, int defense, int experience, int health, int maxHealth, int id) {
+    public Lutemon(String name, String color, int attack, int defense, int experience, int health, int maxHealth) {
         this.name = name;
         this.color = color;
         this.attack = attack;
