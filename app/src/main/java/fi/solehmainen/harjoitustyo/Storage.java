@@ -46,7 +46,7 @@ public class Storage {
         int i = 0;
 
         for(i=0;i<lutemonHashMap.size();i++){
-            // Tähän itse toiminto
+            System.out.println(storage.lutemonHashMap.get(i).name);
         }
     }
 

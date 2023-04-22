@@ -28,6 +28,9 @@ public class Lutemon implements Serializable {
         this.health = health;
         this.maxHealth = maxHealth;
         this.id = idCounter();
+
+        Storage.getInstance().lutemonHashMap.put(this.id, this);
+        System.out.println(this.name + "luotiin.");
     }
 
     private int idCounter() {
