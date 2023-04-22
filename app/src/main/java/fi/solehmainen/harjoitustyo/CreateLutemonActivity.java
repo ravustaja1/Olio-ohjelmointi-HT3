@@ -1,13 +1,13 @@
 package fi.solehmainen.harjoitustyo;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class CreateLutemonActivity extends AppCompatActivity {
 
@@ -41,6 +41,7 @@ public class CreateLutemonActivity extends AppCompatActivity {
     public void createLutemon(){
         RadioGroup radioGroup = findViewById(R.id.radioGroup);
         Lutemon newLutemon = null;
+        String color;
 
         // Lutemoneilta puuttuu arvot, pitäisikö ne tehdä vaikka sen taulukon pohjalta?
         // Tonne ite Activityyn olisi hieno saada näkyviin tekstikenttään ne arvot, jotka päivittyy, kun painaa eri nappulaa
@@ -48,30 +49,34 @@ public class CreateLutemonActivity extends AppCompatActivity {
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.rbWhite:
                 newLutemon = new Lutemon(lutemonName.getText().toString(), "White", 5, 4, 0, 20, 20);
+                //color = "White";
                 break;
             case R.id.rbGreen:
                 newLutemon = new Lutemon(lutemonName.getText().toString(), "Green", 6, 3, 0, 19, 19);
+                //color = "Green";
                 break;
             case R.id.rbPink:
                 newLutemon = new Lutemon(lutemonName.getText().toString(), "Pink", 7, 2, 0, 18, 18);
+                //color = "Pink";
                 break;
             case R.id.rbOrange:
                 newLutemon = new Lutemon(lutemonName.getText().toString(), "Orange", 8, 1, 0, 17, 17);
+                //color = "Orange";
                 break;
             case R.id.rbBlack:
                 newLutemon = new Lutemon(lutemonName.getText().toString(), "Black", 9, 0, 0, 16, 16);
+                //color = "Black";
                 break;
-
-            
-            // Kun lisätään tämä uusi lutemon hashmappiin niin eikös meidän pitäisi saada oikea ID, tolla hashmapin koolla?
-            // Jotain häikkää tässä muutenkin on, kun punaista näyttää
-            Storage.getInstance().lutemonHashMap.put(newLutemon.id, newLutemon);
-
-            //Tähän vois tehdä sen tallennuksen tiedostoon?
-
-            Storage.getInstance().saveLutemons(this);
-
         }
-    }
 
+        // Kun lisätään tämä uusi lutemon hashmappiin niin eikös meidän pitäisi saada oikea ID, tolla hashmapin koolla?
+        // Pitäisikö tolle napille saada joku listeneri, jolloin se luo ton Lutemonin nappia painaessa ja toinen joka vaihtaa tekstikentän tekstiä kun noita värejä vaihtaa?
+        Storage.getInstance().lutemonHashMap.put(Storage.getInstance().lutemonHashMap.size(), newLutemon);
+
+        //Tähän vois tehdä sen tallennuksen tiedostoon?
+
+        Storage.getInstance().saveLutemons(this);
+
+    }
 }
+
