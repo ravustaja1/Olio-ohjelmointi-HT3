@@ -20,5 +20,6 @@ public class MainActivity extends AppCompatActivity {
 
         Lutemon lutemon = new Lutemon("Teppo", "Valkoinen", 1, 1, 0, 10, 10);
         System.out.println(lutemon.name);
+        Storage.getInstance().listLutemons();
     }
 }
