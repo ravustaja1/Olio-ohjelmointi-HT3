@@ -4,16 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
-import java.util.ArrayList;
+import android.widget.TextView;
 
 public class CreateLutemonActivity extends AppCompatActivity {
 
     private RadioButton white, green, pink, orange, black;
+
+    private TextView stats;
 
     private EditText lutemonName;
 
@@ -26,13 +26,14 @@ public class CreateLutemonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_lutemon);
 
+
         lutemonName = findViewById(R.id.editName);
         createLutemon = findViewById(R.id.btnCreate);
         white = findViewById(R.id.rbWhite);
         pink = findViewById(R.id.rbPink);
         pink = findViewById(R.id.rbPink);
         orange = findViewById(R.id.rbBlack);
-
+        stats = findViewById(R.id.tvStats);
 
 
     }
