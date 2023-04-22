@@ -63,7 +63,7 @@ public class CreateLutemonActivity extends AppCompatActivity {
 
 
             // Kun lisätään tämä uusi lutemon hashmappiin niin eikös meidän pitäisi saada oikea ID, tolla hashmapin koolla?
-            // Jotain häikkää tässä taitaa muutenkin olla, kun punaista näyttää
+            // Jotain häikkää tässä muutenkin on, kun punaista näyttää
             Storage.getInstance().lutemonHashMap.put(newLutemon.getNumberOfCreatedLutemons(), newLutemon);
 
             //Tähän vois tehdä sen tallennuksen tiedostoon?
