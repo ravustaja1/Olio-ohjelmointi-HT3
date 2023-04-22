@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import java.util.ArrayList;
+
 public class CreateLutemonActivity extends AppCompatActivity {
 
     private RadioButton white, green, pink, orange, black;
@@ -16,6 +18,8 @@ public class CreateLutemonActivity extends AppCompatActivity {
     private EditText lutemonName;
 
     private Button createLutemon;
+
+    ArrayList<Lutemon> lutemons = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +63,13 @@ public class CreateLutemonActivity extends AppCompatActivity {
 
 
             // Kun lisätään tämä uusi lutemon hashmappiin niin eikös meidän pitäisi saada oikea ID, tolla hashmapin koolla?
-            Storage.getInstance().lutemonHashMap.put(Storage.getInstance().lutemonHashMap.size(), newLutemon);
+            // Jotain häikkää tässä taitaa muutenkin olla, kun punaista näyttää
+            Storage.getInstance().lutemonHashMap.put(newLutemon.getNumberOfCreatedLutemons(), newLutemon);
+
+            //Tähän vois tehdä sen tallennuksen tiedostoon?
+
+            Storage.getInstance().saveLutemons(this);
+
         }
     }
 
