@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
         context = MainActivity.this;
 
         // TÄmä on testi lutemon, kun koitan saada jotain printattua ulos
+
         Lutemon lutemon = new Lutemon("Teppo", "Valkoinen", 1, 1, 0, 10, 10);
-        System.out.println(storage.getLutemon(0).name);
+        System.out.println(lutemon.name);
     }
 }
