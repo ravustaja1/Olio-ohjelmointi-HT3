@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateLutemonActivity">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rbWhite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Valkoinen" />
+
+        <RadioButton
+            android:id="@+id/rbGreen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vihreä" />
+
+        <RadioButton
+            android:id="@+id/rbPink"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pinkki" />
+
+        <RadioButton
+            android:id="@+id/rbOrange"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Oranssi" />
+
+        <RadioButton
+            android:id="@+id/rbBlack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Musta" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Anna Lutemonin nimi"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        tools:layout_editor_absoluteX="98dp" />
+
+    <Button
+        android:id="@+id/btnCreate"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Lisää uusi Lutemon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editName" />
+</androidx.constraintlayout.widget.ConstraintLayout>

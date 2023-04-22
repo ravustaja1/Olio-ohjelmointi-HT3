@@ -43,6 +43,10 @@ public class Lutemon implements Serializable {
         return id;
     }
 
+    public static int getIdCounter() {
+        return idCounter;
+    }
+
     public void defense(Lutemon lutemon) {
         // Toiminnallisuus tänne
     }
