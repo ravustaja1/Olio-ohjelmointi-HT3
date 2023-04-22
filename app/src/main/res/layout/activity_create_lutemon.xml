@@ -52,8 +52,8 @@
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:hint="Anna Lutemonin nimi"
         android:inputType="text"
-        android:text="Anna Lutemonin nimi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
