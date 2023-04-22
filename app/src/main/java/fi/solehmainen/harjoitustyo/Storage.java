@@ -53,6 +53,7 @@ public class Storage {
     public void listLutemons() {
         int i = 0;
 
+        System.out.println("Lutemonit:");
         for (Lutemon l: lutemonHashMap.values()) {
             System.out.println(lutemonHashMap.get(i).name + " " + lutemonHashMap.get(i).color);
             i++;
