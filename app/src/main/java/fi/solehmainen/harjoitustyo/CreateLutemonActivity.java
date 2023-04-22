@@ -19,7 +19,7 @@ public class CreateLutemonActivity extends AppCompatActivity {
 
     private Button createLutemon;
 
-    ArrayList<Lutemon> lutemons = new ArrayList<>();
+    //ArrayList<Lutemon> lutemons = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
