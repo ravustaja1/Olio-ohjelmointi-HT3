@@ -42,20 +42,21 @@ public class CreateLutemonActivity extends AppCompatActivity {
         // Toki kömpelömpi versio olisi laittaa siihen vain taulukko, jossa näkyy kaikkien arvot
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.rbWhite:
-                newLutemon = new Lutemon();
+                newLutemon = new Lutemon(lutemonName.getText().toString(), "White", 5, 4, 0, 20, 20);
                 break;
             case R.id.rbGreen:
-                newLutemon = new Lutemon();
+                newLutemon = new Lutemon(lutemonName.getText().toString(), "Green", 6, 3, 0, 19, 19);
                 break;
             case R.id.rbPink:
-                newLutemon = new Lutemon();
+                newLutemon = new Lutemon(lutemonName.getText().toString(), "Pink", 7, 2, 0, 18, 18);
                 break;
             case R.id.rbOrange:
-                newLutemon = new Lutemon();
+                newLutemon = new Lutemon(lutemonName.getText().toString(), "Orange", 8, 1, 0, 17, 17);
                 break;
             case R.id.rbBlack:
-                newLutemon = new Lutemon();
+                newLutemon = new Lutemon(lutemonName.getText().toString(), "Black", 9, 0, 0, 16, 16);
                 break;
+
 
             // Kun lisätään tämä uusi lutemon hashmappiin niin eikös meidän pitäisi saada oikea ID, tolla hashmapin koolla?
             Storage.getInstance().lutemonHashMap.put(Storage.getInstance().lutemonHashMap.size(), newLutemon);
