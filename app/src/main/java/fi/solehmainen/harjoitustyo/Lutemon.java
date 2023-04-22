@@ -61,6 +61,7 @@ public class Lutemon implements Serializable {
     public int getNumberOfCreatedLutemons() {
         int size;
 
+        //size = idCounter;
         size = Storage.getInstance().lutemonHashMap.size();
 
         return size;

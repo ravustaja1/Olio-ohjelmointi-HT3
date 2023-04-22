@@ -41,15 +41,7 @@ public class Storage {
 
         return lutemonHashMap.get(id);
     }
-/*
-    public void listLutemons() {
-        int i = 0;
 
-        for(i=0;i<lutemonHashMap.size();i++){
-            System.out.println(storage.lutemonHashMap.get(i).name);
-        }
-    }
-*/
     public void listLutemons() {
         int i = 0;
 
