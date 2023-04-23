@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class LutemonViewHolder extends RecyclerView.ViewHolder {
     protected ImageView lutemonImage;
-    ImageView delete, edit;
-    EditText editText;
+    protected ImageView delete, edit;
+    protected EditText editText;
     TextView name, color, attack, defense, wins, defeats, experience, health, maxHealth;
     public LutemonViewHolder(@NonNull View itemView) {
         super(itemView);
