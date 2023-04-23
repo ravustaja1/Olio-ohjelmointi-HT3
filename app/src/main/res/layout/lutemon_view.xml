@@ -3,7 +3,67 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="#00BCD4">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtLutemonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name" />
+
+        <TextView
+            android:id="@+id/txtLutemonColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Color" />
+
+        <TextView
+            android:id="@+id/txtLutemonAttack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Attack" />
+
+        <TextView
+            android:id="@+id/txtLutemonDefense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Defense" />
+
+        <TextView
+            android:id="@+id/txtLutemonExp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exp" />
+
+        <TextView
+            android:id="@+id/txtLutemonMaxHealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MaxHP" />
+
+        <TextView
+            android:id="@+id/txtLutemonHealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HP" />
+
+        <TextView
+            android:id="@+id/txtLutemonWins"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Wins" />
+
+        <TextView
+            android:id="@+id/txtLutemonDefeats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Defeats" />
+    </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

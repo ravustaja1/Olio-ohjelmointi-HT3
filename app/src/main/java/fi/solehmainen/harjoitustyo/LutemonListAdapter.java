@@ -12,9 +12,9 @@ import java.util.HashMap;
 public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> {
     private Context context;
     private HashMap<Integer, Lutemon> lutemonHashMap;
-    public LutemonListAdapter(Context applicationContext, HashMap<Integer, Lutemon> lutemonHashMap) {
+    public LutemonListAdapter(Context context, HashMap<Integer, Lutemon> lutemonHashMap) {
         this.context = context;
-        this.lutemonHashMap = lutemonHashMap;
+        this.lutemonHashMap = Storage.getInstance().getLutemonHashMap();
     }
 
 
@@ -26,6 +26,16 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull LutemonViewHolder holder, int position) {
+
+        holder.name.setText(lutemonHashMap.get(position).name);
+        holder.color.setText(lutemonHashMap.get(position).color);
+        holder.attack.setText(lutemonHashMap.get(position).attack);
+        holder.defense.setText(lutemonHashMap.get(position).defense);
+        holder.experience.setText(lutemonHashMap.get(position).experience);
+        holder.maxHealth.setText(lutemonHashMap.get(position).maxHealth);
+        holder.health.setText(lutemonHashMap.get(position).health);
+        holder.wins.setText(lutemonHashMap.get(position).wins);
+        holder.defeats.setText(lutemonHashMap.get(position).defense);
 
     }
 

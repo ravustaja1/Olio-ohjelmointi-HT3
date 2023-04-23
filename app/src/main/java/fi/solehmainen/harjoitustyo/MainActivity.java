@@ -32,5 +32,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void switchToList(View view) {
+        Intent intent = new Intent(this, ListLutemonsActivity.class);
+        startActivity(intent);
+    }
+
 
 }
