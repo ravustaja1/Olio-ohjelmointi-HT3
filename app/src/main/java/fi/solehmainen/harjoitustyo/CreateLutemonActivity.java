@@ -81,7 +81,7 @@ public class CreateLutemonActivity extends AppCompatActivity {
 
         //Tähän vois tehdä sen tallennuksen tiedostoon?
 
-        Storage.getInstance().saveLutemons(this);
+        //Storage.getInstance().saveLutemons(this);
 
     }
 /*
