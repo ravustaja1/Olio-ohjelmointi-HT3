@@ -5,8 +5,8 @@
     <string name="Kuva_3">Fighter</string>
     <string name="menu">dropDownMenu</string>
     <string-array name="images">
-        <item>Kuva1</item>
-        <item>Kuva2</item>
-        <item>Kuva3</item>
+        <item>Happy</item>
+        <item>Dark Happy</item>
+        <item>Fighter</item>
     </string-array>
 </resources>

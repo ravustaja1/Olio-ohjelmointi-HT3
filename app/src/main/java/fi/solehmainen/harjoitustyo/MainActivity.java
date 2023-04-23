@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
 
         // TÄmä on testi lutemon, kun koitan saada jotain printattua ulos
 
-        Lutemon lutemon = new Lutemon("Teppo", "Valkoinen", 1, 1, 0, 10, 10);
-        Lutemon lutemon2 = new Lutemon("Kalle", "Punainen", 1, 1, 0, 10, 10);
+        Lutemon lutemon = new Lutemon("Teppo", "Valkoinen", 1, 1, 0, 10, 10,0);
+        Lutemon lutemon2 = new Lutemon("Kalle", "Punainen", 1, 1, 0, 10, 10,1);
 
         Storage.getInstance().listLutemons();
         System.out.println("Lutemonien määrä: " + Storage.getInstance().lutemonHashMap.size());

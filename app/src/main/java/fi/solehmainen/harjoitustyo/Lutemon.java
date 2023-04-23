@@ -19,7 +19,7 @@ public class Lutemon implements Serializable {
 
     private static int idCounter = 0;
 
-    public Lutemon(String name, String color, int attack, int defense, int experience, int health, int maxHealth) {
+    public Lutemon(String name, String color, int attack, int defense, int experience, int health, int maxHealth, int image) {
         this.name = name;
         this.color = color;
         this.attack = attack;
@@ -30,7 +30,14 @@ public class Lutemon implements Serializable {
         this.wins = 0;
         this.defeats = 0;
         this.id = idCounter();
-        this.image = R.drawable.happy;
+        if (image == 0) {
+            this.image = R.drawable.happy;
+        } else if (image == 1) {
+            this.image = R.drawable.happy2;
+        } else if (image == 2) {
+            this.image = R.drawable.fighter;
+        }
+
 
         Storage.getInstance().lutemonHashMap.put(this.id, this);
 
