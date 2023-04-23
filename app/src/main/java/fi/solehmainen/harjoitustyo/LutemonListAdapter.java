@@ -14,7 +14,7 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
     private HashMap<Integer, Lutemon> lutemonHashMap;
     public LutemonListAdapter(Context context, HashMap<Integer, Lutemon> lutemonHashMap) {
         this.context = context;
-        this.lutemonHashMap = Storage.getInstance().getLutemonHashMap();
+        this.lutemonHashMap = lutemonHashMap;
     }
 
 
