@@ -36,7 +36,7 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
         holder.maxHealth.setText("Täydet elämäpisteet: " + String.valueOf(lutemonHashMap.get(position).maxHealth));
         holder.health.setText("Elämäpisteet: " + String.valueOf(lutemonHashMap.get(position).health));
         holder.wins.setText("Voitot: " + String.valueOf(lutemonHashMap.get(position).wins));
-        holder.defeats.setText("Tappiot: " + String.valueOf(lutemonHashMap.get(position).defense));
+        holder.defeats.setText("Tappiot: " + String.valueOf(lutemonHashMap.get(position).defeats));
 
     }
 
