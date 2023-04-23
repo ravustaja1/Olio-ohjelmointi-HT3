@@ -49,6 +49,7 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
                 notifyItemRemoved(pos);
             }
         });
+
 /*
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
