@@ -1,6 +1,8 @@
 package fi.solehmainen.harjoitustyo;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -11,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class CreateLutemonActivity extends AppCompatActivity {
 
+    private RadioGroup radioGroup;
     private RadioButton white, green, pink, orange, black;
 
     private TextView stats;
@@ -36,9 +39,12 @@ public class CreateLutemonActivity extends AppCompatActivity {
         stats = findViewById(R.id.tvStats);
 
 
+
+
+
     }
 
-    public void createLutemon(){
+    public void createLutemon(View view){
         RadioGroup radioGroup = findViewById(R.id.radioGroup);
         Lutemon newLutemon = null;
         String color;
@@ -76,6 +82,18 @@ public class CreateLutemonActivity extends AppCompatActivity {
         //Tähän vois tehdä sen tallennuksen tiedostoon?
 
         Storage.getInstance().saveLutemons(this);
+
+    }
+
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        if (view.getId() == R.id.rbWhite) {
+            stats.setText("Väri: Valkoinen\nDamage: 5\nPuolustus: 4\nMax HP: 20");
+        } else if (view.getId() == R.id.rbGreen) {
+            stats.setText("Väri: Vihreä\nDamage: 6\nPuolustus: 3\nMax HP: 19");
+        }
 
     }
 }

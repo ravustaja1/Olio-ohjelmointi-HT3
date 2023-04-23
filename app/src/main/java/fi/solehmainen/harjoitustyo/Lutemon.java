@@ -32,7 +32,7 @@ public class Lutemon implements Serializable {
         Storage.getInstance().lutemonHashMap.put(this.id, this);
 
         // Tämä rivi on ihan vaan sitä varten, että saisi jotain printattua ulos
-        //System.out.println(this.name + " luotiin.");
+        System.out.println(this.name + " niminen Lutemon värillä + " + this.color + " luotiin.");
     }
 
     private int idCounter() {
