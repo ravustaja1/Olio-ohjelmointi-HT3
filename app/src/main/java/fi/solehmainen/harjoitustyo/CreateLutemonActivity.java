@@ -47,7 +47,7 @@ public class CreateLutemonActivity extends AppCompatActivity {
         orange = findViewById(R.id.rbBlack);
         stats = findViewById(R.id.tvStats);
         radioGroup = findViewById(R.id.radioGroup);
-        stats.setText("Väri: Valkoinen\nDamage: 5\nPuolustus: 4\nMax HP: 20");
+        stats.setText("Luo itsellesi Lutemon!");
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.images, android.R.layout.simple_spinner_item);
