@@ -46,10 +46,37 @@ public class CreateLutemonActivity extends AppCompatActivity {
         pink = findViewById(R.id.rbPink);
         orange = findViewById(R.id.rbBlack);
         stats = findViewById(R.id.tvStats);
+        radioGroup = findViewById(R.id.radioGroup);
+        stats.setText("Väri: Valkoinen\nDamage: 5\nPuolustus: 4\nMax HP: 20");
+
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.images, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                switch (checkedId) {
+                    case R.id.rbWhite:
+                        stats.setText("Väri: Valkoinen\nDamage: 5\nPuolustus: 4\nMax HP: 20");
+                        break;
+                    case R.id.rbGreen:
+                        stats.setText("Väri: Vihreä\nDamage: 6\nPuolustus: 3\nMax HP: 19");
+                        break;
+                    case R.id.rbPink:
+                        stats.setText("Väri: Pinkki\nDamage: 7\nPuolustus: 2\nMax HP: 18");
+                        break;
+                    case R.id.rbOrange:
+                        stats.setText("Väri: Oranssi\nDamage: 8\nPuolustus: 1\nMax HP: 17");
+                        break;
+                    case R.id.rbBlack:
+                        stats.setText("Väri: Musta\nDamage: 9\nPuolustus: 0\nMax HP: 16");
+                        break;
+
+                }
+            }
+        });
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -119,6 +146,9 @@ public class CreateLutemonActivity extends AppCompatActivity {
         //Storage.getInstance().saveLutemons(this);
 
     }
+
+
+
 /*
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
