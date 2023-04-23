@@ -5,10 +5,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.EditText;
 
 public class ListLutemonsActivity extends AppCompatActivity {
 
     private Storage storage;
+
+
 
     private RecyclerView recyclerView;
 

@@ -2,6 +2,7 @@ package fi.solehmainen.harjoitustyo;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -37,7 +38,36 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
         holder.health.setText("Elämäpisteet: " + String.valueOf(lutemonHashMap.get(position).health));
         holder.wins.setText("Voitot: " + String.valueOf(lutemonHashMap.get(position).wins));
         holder.defeats.setText("Tappiot: " + String.valueOf(lutemonHashMap.get(position).defeats));
+        holder.delete.setImageResource(lutemonHashMap.get(position).getImage2());
+        //holder.edit.setImageResource(lutemonHashMap.get(position).getImage3());
+        //holder.editText.setText(lutemonHashMap.get(position).name);
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int pos = holder.getAdapterPosition();
+                Storage.getInstance().getLutemonHashMap().remove(pos);
+                notifyItemRemoved(pos);
+            }
+        });
+/*
+        holder.edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int pos = holder.getAdapterPosition();
 
+                if(holder.editText.getVisibility() == View.VISIBLE) {
+                    Lutemon lutemon = Storage.getInstance().getLutemon(pos);
+                    lutemon.setName(holder.editText.getText().toString());
+                    holder.editText.setVisibility(View.INVISIBLE);
+                    notifyDataSetChanged();
+                }
+                else {
+                    holder.editText.setVisibility(View.VISIBLE);
+                }
+
+            }
+        });
+*/
     }
 
     @Override
