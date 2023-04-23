@@ -84,7 +84,7 @@ public class CreateLutemonActivity extends AppCompatActivity {
         Storage.getInstance().saveLutemons(this);
 
     }
-
+/*
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
         boolean checked = ((RadioButton) view).isChecked();
@@ -96,5 +96,7 @@ public class CreateLutemonActivity extends AppCompatActivity {
         }
 
     }
+
+ */
 }
 
