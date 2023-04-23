@@ -36,6 +36,16 @@ public class Storage {
         return lutemon;
     }
     */
+    public void removeLutemon(int id) {
+        int i = 0;
+        for (Lutemon l : lutemonHashMap.values()) {
+            if (l.id == id){
+                break;
+            }
+        i++;
+        }
+        lutemonHashMap.remove(i);
+    }
 
     public Lutemon getLutemon(int id) {
 

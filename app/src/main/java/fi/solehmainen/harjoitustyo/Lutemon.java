@@ -47,6 +47,10 @@ public class Lutemon implements Serializable {
         System.out.println("ID: " + this.id + " " + this.name + " niminen Lutemon värillä + " + this.color + " luotiin.");
     }
 
+    public int getId() {
+        return id;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
