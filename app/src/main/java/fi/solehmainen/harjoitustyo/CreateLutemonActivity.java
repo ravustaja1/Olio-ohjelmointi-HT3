@@ -1,12 +1,15 @@
 package fi.solehmainen.harjoitustyo;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +21,11 @@ public class CreateLutemonActivity extends AppCompatActivity {
 
     private TextView stats;
 
+    private Spinner spinner;
+
     private EditText lutemonName;
+    private int image;
+    private ImageView previewImg;
 
     private Button createLutemon;
 
@@ -32,16 +39,45 @@ public class CreateLutemonActivity extends AppCompatActivity {
 
         lutemonName = findViewById(R.id.editName);
         createLutemon = findViewById(R.id.btnCreate);
+        previewImg = findViewById(R.id.ivPreviewImg);
+        spinner = findViewById(R.id.spinner);
         white = findViewById(R.id.rbWhite);
         pink = findViewById(R.id.rbPink);
         pink = findViewById(R.id.rbPink);
         orange = findViewById(R.id.rbBlack);
         stats = findViewById(R.id.tvStats);
 
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.images, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinner.setAdapter(adapter);
 
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
 
+                if (spinner.getSelectedItemPosition() == 0){
+                    //image = R.drawable.baseline_bluetooth_drive_24;
+                    previewImg.setImageResource(R.drawable.happy);
+                }
 
+                if (spinner.getSelectedItemPosition() == 1){
+                    previewImg.setImageResource(R.drawable.happy2);
+                    //image = R.drawable.ic_android_black_24dp;
+                }
 
+                if (spinner.getSelectedItemPosition() == 2){
+                    previewImg.setImageResource(R.drawable.fighter);
+                    //image = R.drawable.ic_android_black_24dp;
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                image = R.drawable.happy;
+            }
+
+        });
     }
 
     public void createLutemon(View view){

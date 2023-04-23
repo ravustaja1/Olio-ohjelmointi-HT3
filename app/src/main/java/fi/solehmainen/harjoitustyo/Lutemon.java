@@ -3,7 +3,7 @@ package fi.solehmainen.harjoitustyo;
 import java.io.Serializable;
 
 public class Lutemon implements Serializable {
-
+    protected int image;
     protected String name;
     protected String color;
     protected int attack;
@@ -30,11 +30,12 @@ public class Lutemon implements Serializable {
         this.wins = 0;
         this.defeats = 0;
         this.id = idCounter();
+        this.image = R.drawable.happy;
 
         Storage.getInstance().lutemonHashMap.put(this.id, this);
 
         // Tämä rivi on ihan vaan sitä varten, että saisi jotain printattua ulos
-        System.out.println(this.name + " niminen Lutemon värillä + " + this.color + " luotiin.");
+        System.out.println("ID: " + this.id + " " + this.name + " niminen Lutemon värillä + " + this.color + " luotiin.");
     }
 
     private int idCounter() {
@@ -43,6 +44,10 @@ public class Lutemon implements Serializable {
         id = idCounter++;
 
         return id;
+    }
+
+    public int getImage() {
+        return image;
     }
 
     public static int getIdCounter() {

@@ -47,7 +47,7 @@ public class Storage {
 
         System.out.println("Lutemonit:");
         for (Lutemon l: lutemonHashMap.values()) {
-            System.out.println(lutemonHashMap.get(i).name + " " + lutemonHashMap.get(i).color);
+            System.out.println("Lutemoni ID:llä " + lutemonHashMap.get(i).id + " nimellä " + lutemonHashMap.get(i).name + " " + lutemonHashMap.get(i).color);
             i++;
         }
     }

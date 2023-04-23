@@ -27,15 +27,16 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull LutemonViewHolder holder, int position) {
 
-        holder.name.setText(lutemonHashMap.get(position).name);
-        holder.color.setText(lutemonHashMap.get(position).color);
-        holder.attack.setText(lutemonHashMap.get(position).attack);
-        holder.defense.setText(lutemonHashMap.get(position).defense);
-        holder.experience.setText(lutemonHashMap.get(position).experience);
-        holder.maxHealth.setText(lutemonHashMap.get(position).maxHealth);
-        holder.health.setText(lutemonHashMap.get(position).health);
-        holder.wins.setText(lutemonHashMap.get(position).wins);
-        holder.defeats.setText(lutemonHashMap.get(position).defense);
+        holder.lutemonImage.setImageResource(lutemonHashMap.get(position).getImage());
+        holder.name.setText("Nimi: " + lutemonHashMap.get(position).name);
+        holder.color.setText("Väri: " + lutemonHashMap.get(position).color);
+        holder.attack.setText("Hyökkäys: " + String.valueOf(lutemonHashMap.get(position).attack));
+        holder.defense.setText("Puolustus: " + String.valueOf(lutemonHashMap.get(position).defense));
+        holder.experience.setText("Kokemus: " + String.valueOf(lutemonHashMap.get(position).experience));
+        holder.maxHealth.setText("Täydet elämäpisteet: " + String.valueOf(lutemonHashMap.get(position).maxHealth));
+        holder.health.setText("Elämäpisteet: " + String.valueOf(lutemonHashMap.get(position).health));
+        holder.wins.setText("Voitot: " + String.valueOf(lutemonHashMap.get(position).wins));
+        holder.defeats.setText("Tappiot: " + String.valueOf(lutemonHashMap.get(position).defense));
 
     }
 

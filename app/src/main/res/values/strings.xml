@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Harjoitustyo</string>
+    <string name="Kuva_1">Happy</string>
+    <string name="Kuva_2">Dark Happy</string>
+    <string name="Kuva_3">Fighter</string>
+    <string name="menu">dropDownMenu</string>
+    <string-array name="images">
+        <item>Kuva1</item>
+        <item>Kuva2</item>
+        <item>Kuva3</item>
+    </string-array>
 </resources>
