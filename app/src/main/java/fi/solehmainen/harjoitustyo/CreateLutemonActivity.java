@@ -101,7 +101,7 @@ public class CreateLutemonActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parentView) {
-                image = R.drawable.happy;
+                previewImg.setImageResource(image = R.drawable.happy);
             }
 
         });
