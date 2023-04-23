@@ -52,6 +52,10 @@ public class Storage {
         }
     }
 
+    public HashMap<Integer, Lutemon> getLutemonHashMap() {
+        return lutemonHashMap;
+    }
+
     public void loadLutemons(Context context) {
         try {
             ObjectInputStream userReader = new ObjectInputStream(context.openFileInput("lutemons.data"));
