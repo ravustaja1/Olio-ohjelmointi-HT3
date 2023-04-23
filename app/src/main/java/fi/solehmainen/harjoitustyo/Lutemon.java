@@ -41,7 +41,7 @@ public class Lutemon implements Serializable {
         this.image3 = R.drawable.baseline_mode_edit_24;
 
 
-        Storage.getInstance().lutemonHashMap.put(this.id, this);
+        //Storage.getInstance().lutemonHashMap.put(this.id, this);
 
         // Tämä rivi on ihan vaan sitä varten, että saisi jotain printattua ulos
         System.out.println("ID: " + this.id + " " + this.name + " niminen Lutemon värillä + " + this.color + " luotiin.");
