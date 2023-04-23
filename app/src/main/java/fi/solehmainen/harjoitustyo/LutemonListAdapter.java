@@ -1,6 +1,7 @@
 package fi.solehmainen.harjoitustyo;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -20,7 +21,7 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
     @NonNull
     @Override
     public LutemonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        return new LutemonViewHolder(LayoutInflater.from(context).inflate(R.layout.lutemon_view,parent,false));
     }
 
     @Override
@@ -30,6 +31,6 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
 
     @Override
     public int getItemCount() {
-        return 0;
+        return lutemonHashMap.size();
     }
 }
