@@ -8,14 +8,15 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> {
     private Context context;
-    private HashMap<Integer, Lutemon> lutemonHashMap;
-    public LutemonListAdapter(Context context, HashMap<Integer, Lutemon> lutemonHashMap) {
+    private ArrayList<Lutemon> lutemons;
+    public LutemonListAdapter(Context context, ArrayList<Lutemon> lutemons) {
         this.context = context;
-        this.lutemonHashMap = lutemonHashMap;
+        this.lutemons = lutemons;
     }
 
 
@@ -28,24 +29,24 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull LutemonViewHolder holder, int position) {
 
-        holder.lutemonImage.setImageResource(lutemonHashMap.get(position).getImage());
-        holder.name.setText("Nimi: " + lutemonHashMap.get(position).name);
-        holder.color.setText("Väri: " + lutemonHashMap.get(position).color);
-        holder.attack.setText("Hyökkäys: " + String.valueOf(lutemonHashMap.get(position).attack));
-        holder.defense.setText("Puolustus: " + String.valueOf(lutemonHashMap.get(position).defense));
-        holder.experience.setText("Kokemus: " + String.valueOf(lutemonHashMap.get(position).experience));
-        holder.maxHealth.setText("Täydet elämäpisteet: " + String.valueOf(lutemonHashMap.get(position).maxHealth));
-        holder.health.setText("Elämäpisteet: " + String.valueOf(lutemonHashMap.get(position).health));
-        holder.wins.setText("Voitot: " + String.valueOf(lutemonHashMap.get(position).wins));
-        holder.defeats.setText("Tappiot: " + String.valueOf(lutemonHashMap.get(position).defeats));
-        holder.delete.setImageResource(lutemonHashMap.get(position).getImage2());
+        holder.lutemonImage.setImageResource(lutemons.get(position).getImage());
+        holder.name.setText("Nimi: " + lutemons.get(position).name);
+        holder.color.setText("Väri: " + lutemons.get(position).color);
+        holder.attack.setText("Hyökkäys: " + String.valueOf(lutemons.get(position).attack));
+        holder.defense.setText("Puolustus: " + String.valueOf(lutemons.get(position).defense));
+        holder.experience.setText("Kokemus: " + String.valueOf(lutemons.get(position).experience));
+        holder.maxHealth.setText("Täydet elämäpisteet: " + String.valueOf(lutemons.get(position).maxHealth));
+        holder.health.setText("Elämäpisteet: " + String.valueOf(lutemons.get(position).health));
+        holder.wins.setText("Voitot: " + String.valueOf(lutemons.get(position).wins));
+        holder.defeats.setText("Tappiot: " + String.valueOf(lutemons.get(position).defeats));
+        holder.delete.setImageResource(lutemons.get(position).getImage2());
         //holder.edit.setImageResource(lutemonHashMap.get(position).getImage3());
         //holder.editText.setText(lutemonHashMap.get(position).name);
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int pos = holder.getAdapterPosition();
-                Storage.getInstance().lutemonHashMap.remove(pos);
+                Storage.getInstance().lutemons.remove(pos);
                 notifyItemRemoved(pos);
             }
         });
@@ -73,6 +74,6 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
 
     @Override
     public int getItemCount() {
-        return lutemonHashMap.size();
+        return lutemons.size();
     }
 }

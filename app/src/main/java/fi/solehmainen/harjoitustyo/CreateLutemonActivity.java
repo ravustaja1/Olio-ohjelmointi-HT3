@@ -139,7 +139,9 @@ public class CreateLutemonActivity extends AppCompatActivity {
 
         // Kun lisätään tämä uusi lutemon hashmappiin niin eikös meidän pitäisi saada oikea ID, tolla hashmapin koolla?
         // Pitäisikö tolle napille saada joku listeneri, jolloin se luo ton Lutemonin nappia painaessa ja toinen joka vaihtaa tekstikentän tekstiä kun noita värejä vaihtaa?
-        Storage.getInstance().lutemonHashMap.put(Storage.getInstance().lutemonHashMap.size(), newLutemon);
+
+
+        //Storage.getInstance().lutemons.put(newLutemon);
 
         //Tähän vois tehdä sen tallennuksen tiedostoon?
 

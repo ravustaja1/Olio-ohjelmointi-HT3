@@ -14,7 +14,7 @@ public class Storage {
 
     private static Storage storage = null;
 
-    HashMap<Integer, Lutemon> lutemonHashMap = new HashMap<>();
+    ArrayList<Lutemon> lutemons = new ArrayList<>();
 
     private Storage(){
     }
@@ -38,38 +38,38 @@ public class Storage {
     */
     public void removeLutemon(int id) {
         int i = 0;
-        for (Lutemon l : lutemonHashMap.values()) {
+        for (Lutemon l : lutemons) {
             if (l.id == id){
                 break;
             }
         i++;
         }
-        lutemonHashMap.remove(i);
+        lutemons.remove(i);
     }
 
     public Lutemon getLutemon(int id) {
 
-        return lutemonHashMap.get(id);
+        return lutemons.get(id);
     }
 
     public void listLutemons() {
         int i = 0;
 
         System.out.println("Lutemonit:");
-        for (Lutemon l: lutemonHashMap.values()) {
-            System.out.println("Lutemoni ID:llä " + lutemonHashMap.get(i).id + " nimellä " + lutemonHashMap.get(i).name + " " + lutemonHashMap.get(i).color);
+        for (Lutemon l: lutemons) {
+            System.out.println("Lutemoni ID:llä " + lutemons.get(i).id + " nimellä " + lutemons.get(i).name + " " + lutemons.get(i).color);
             i++;
         }
     }
 
-    public HashMap<Integer, Lutemon> getLutemonHashMap() {
-        return lutemonHashMap;
+    public ArrayList<Lutemon> getLutemonArrayList() {
+        return lutemons;
     }
 
     public void loadLutemons(Context context) {
         try {
             ObjectInputStream userReader = new ObjectInputStream(context.openFileInput("lutemons.data"));
-            lutemonHashMap = (HashMap<Integer, Lutemon>) userReader.readObject();
+            lutemons = (ArrayList<Lutemon>) userReader.readObject();
             userReader.close();
         } catch (FileNotFoundException e) {
             System.out.println("Käyttäjien lukeminen ei onnistunut.");
@@ -86,7 +86,7 @@ public class Storage {
     public void saveLutemons(Context context) {
         try {
             ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("lutemons.data", Context.MODE_PRIVATE));
-            userWriter.writeObject(lutemonHashMap);
+            userWriter.writeObject(lutemons);
             userWriter.close();
         } catch (IOException e) {
             System.out.println("Käyttäjien lukeminen ei onnistunut.");
