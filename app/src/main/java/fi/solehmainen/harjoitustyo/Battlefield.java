@@ -23,11 +23,21 @@ public class Battlefield extends AppCompatActivity {
 
 
 
-        lutemonsAtArena = Storage.getInstance().getLutemonArrayList();
+        makeCheckBoxes();
+
     }
 
     public void makeCheckBoxes() {
         lutemonsAtArena = Storage.getInstance().getLutemonArrayList();
+
+        CheckBox checkBox;
+        int i = 0;
+        for (Lutemon l : lutemonsAtArena) {
+            checkBox = new CheckBox(this);
+            checkBox.setText(l.getName());
+            checkBox.setId(i++);
+
+        }
 
 
     }

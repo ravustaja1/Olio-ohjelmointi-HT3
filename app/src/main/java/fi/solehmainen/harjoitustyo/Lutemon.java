@@ -71,7 +71,13 @@ public class Lutemon implements Serializable {
         return image2;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public String getName() {
+        return name;
+    }
 
     public static int getIdCounter() {
         return idCounter;
