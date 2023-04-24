@@ -1,6 +1,7 @@
 package fi.solehmainen.harjoitustyo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.math.MathUtils;
 
 import android.os.Bundle;
 import android.widget.CheckBox;
@@ -13,6 +14,7 @@ public class Battlefield extends AppCompatActivity {
     protected ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
     protected LinearLayout linearLayout;
     protected TextView textViewBattle;
+    protected CheckBox checkBox;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,9 +23,10 @@ public class Battlefield extends AppCompatActivity {
         linearLayout = findViewById(R.id.llFighters);
         textViewBattle = findViewById(R.id.tvBattle);
 
-
-
         makeCheckBoxes();
+
+
+
 
     }
 
@@ -40,6 +43,9 @@ public class Battlefield extends AppCompatActivity {
             linearLayout.addView(checkBox);
         }
 
+    }
+
+    public void fight(Lutemon l1, Lutemon l2) {
 
     }
 }
