@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 public class LutemonViewHolder extends RecyclerView.ViewHolder {
     protected ImageView lutemonImage;
     protected ImageView delete, edit;
-    protected EditText editText;
+    protected EditText editNameText;
     TextView name, color, attack, defense, wins, defeats, experience, health, maxHealth;
     public LutemonViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -27,7 +27,7 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
         wins = itemView.findViewById(R.id.txtLutemonWins);
         defeats = itemView.findViewById(R.id.txtLutemonDefeats);
         delete = itemView.findViewById(R.id.ivDelete);
-        //edit = itemView.findViewById(R.id.ivEdit);
-        //editText = itemView.findViewById(R.id.editName);
+        edit = itemView.findViewById(R.id.ivEdit);
+        editNameText = itemView.findViewById(R.id.editName);
     }
 }

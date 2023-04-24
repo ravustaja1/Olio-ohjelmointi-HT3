@@ -110,6 +110,6 @@
             android:ems="10"
             android:hint="Uusi nimi"
             android:inputType="text"
-            android:visibility="invisible" />
+            android:visibility="gone" />
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>

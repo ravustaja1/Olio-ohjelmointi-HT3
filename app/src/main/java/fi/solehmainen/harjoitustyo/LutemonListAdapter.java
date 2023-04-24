@@ -40,8 +40,8 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
         holder.wins.setText("Voitot: " + String.valueOf(lutemons.get(position).wins));
         holder.defeats.setText("Tappiot: " + String.valueOf(lutemons.get(position).defeats));
         holder.delete.setImageResource(lutemons.get(position).getImage2());
-        //holder.edit.setImageResource(lutemonHashMap.get(position).getImage3());
-        //holder.editText.setText(lutemonHashMap.get(position).name);
+        holder.edit.setImageResource(lutemons.get(position).getImage3());
+        holder.editNameText.setText(lutemons.get(position).name);
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,25 +51,25 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
             }
         });
 
-/*
+
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int pos = holder.getAdapterPosition();
 
-                if(holder.editText.getVisibility() == View.VISIBLE) {
+                if(holder.editNameText.getVisibility() == View.VISIBLE) {
                     Lutemon lutemon = Storage.getInstance().getLutemon(pos);
-                    lutemon.setName(holder.editText.getText().toString());
-                    holder.editText.setVisibility(View.INVISIBLE);
+                    lutemon.setName(holder.editNameText.getText().toString());
+                    holder.editNameText.setVisibility(View.GONE);
                     notifyDataSetChanged();
                 }
                 else {
-                    holder.editText.setVisibility(View.VISIBLE);
+                    holder.editNameText.setVisibility(View.VISIBLE);
                 }
 
             }
         });
-*/
+
     }
 
     @Override
