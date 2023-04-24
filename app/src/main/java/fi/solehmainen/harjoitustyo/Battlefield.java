@@ -29,6 +29,7 @@ public class Battlefield extends AppCompatActivity {
 
     public void makeCheckBoxes() {
         lutemonsAtArena = Storage.getInstance().getLutemonArrayList();
+        linearLayout.removeAllViews();
 
         CheckBox checkBox;
         int i = 0;
@@ -36,7 +37,7 @@ public class Battlefield extends AppCompatActivity {
             checkBox = new CheckBox(this);
             checkBox.setText(l.getName());
             checkBox.setId(i++);
-
+            linearLayout.addView(checkBox);
         }
 
 
