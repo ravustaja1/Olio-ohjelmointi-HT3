@@ -27,6 +27,8 @@ public class Battlefield extends AppCompatActivity {
     }
 
     public void makeCheckBoxes() {
+        lutemonsAtArena = Storage.getInstance().getLutemonArrayList();
+
 
     }
 }
