@@ -6,10 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private Context context;
-    //private Storage storage;
+    private Button save, load;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,16 +19,25 @@ public class MainActivity extends AppCompatActivity {
 
         Storage storage = Storage.getInstance();
         context = MainActivity.this;
+        save = findViewById(R.id.btnSave);
+        load = findViewById(R.id.btnLoad);
 
-        // TÄmä on testi lutemon, kun koitan saada jotain printattua ulos
-/*
-        Lutemon lutemon = new Lutemon("Teppo", "Valkoinen", 1, 1, 0, 10, 10,0);
-        Lutemon lutemon2 = new Lutemon("Kalle", "Punainen", 1, 1, 0, 10, 10,1);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Storage.getInstance().saveLutemons(context);
+                System.out.println("Lutemonit tallennettu");
+            }
+        });
 
-        Storage.getInstance().listLutemons();
-        System.out.println("Lutemonien määrä: " + Storage.getInstance().lutemonHashMap.size());
+        load.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Storage.getInstance().loadLutemons(context);
+                System.out.println("Lutemonit ladattu");
+            }
+        });
 
- */
     }
 
     public void switchToCreate(View view) {

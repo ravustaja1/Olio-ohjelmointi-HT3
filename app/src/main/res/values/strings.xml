@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Harjoitustyo</string>
     <string name="Kuva_1">Happy</string>
-    <string name="Kuva_2">Dark Happy</string>
+    <string name="Kuva_2">Dark</string>
     <string name="Kuva_3">Fighter</string>
     <string name="menu">dropDownMenu</string>
     <string-array name="images">
         <item>Happy</item>
-        <item>Dark Happy</item>
+        <item>Dark</item>
         <item>Fighter</item>
     </string-array>
 </resources>

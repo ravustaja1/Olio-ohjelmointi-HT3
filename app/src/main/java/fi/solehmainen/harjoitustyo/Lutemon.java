@@ -38,7 +38,7 @@ public class Lutemon implements Serializable {
             this.image = R.drawable.fighter;
         }
         this.image2 = R.drawable.delete;
-        this.image3 = R.drawable.baseline_mode_edit_24;
+
 
 
         Storage.getInstance().lutemons.add(this);
@@ -50,11 +50,11 @@ public class Lutemon implements Serializable {
     public int getId() {
         return id;
     }
-
+/*
     public void setName(String name) {
         this.name = name;
     }
-
+*/
     private int idCounter() {
         int id;
 
@@ -71,9 +71,7 @@ public class Lutemon implements Serializable {
         return image2;
     }
 
-    public int getImage3() {
-        return image3;
-    }
+
 
     public static int getIdCounter() {
         return idCounter;
@@ -91,12 +89,8 @@ public class Lutemon implements Serializable {
     }
 
     public int getNumberOfCreatedLutemons() {
-        int size;
 
-        //size = idCounter;
-        size = Storage.getInstance().lutemons.size();
-
-        return size;
+        return idCounter;
     }
 
 

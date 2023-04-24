@@ -7,14 +7,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class Storage {
     protected String name;
 
     private static Storage storage = null;
 
-    ArrayList<Lutemon> lutemons = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemons = new ArrayList<>();
 
     private Storage(){
     }
@@ -36,10 +35,11 @@ public class Storage {
         return lutemon;
     }
     */
+
     public void removeLutemon(int id) {
         int i = 0;
         for (Lutemon l : lutemons) {
-            if (l.id == id){
+            if (l.getId() == id){
                 break;
             }
         i++;
