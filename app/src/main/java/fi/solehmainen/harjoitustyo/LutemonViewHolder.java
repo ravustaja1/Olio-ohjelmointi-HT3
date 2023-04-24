@@ -27,7 +27,5 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
         wins = itemView.findViewById(R.id.txtLutemonWins);
         defeats = itemView.findViewById(R.id.txtLutemonDefeats);
         delete = itemView.findViewById(R.id.ivDelete);
-        edit = itemView.findViewById(R.id.ivEdit);
-        editNameText = itemView.findViewById(R.id.editName);
     }
 }

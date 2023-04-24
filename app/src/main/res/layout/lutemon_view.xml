@@ -96,20 +96,5 @@
             android:layout_height="50dp"
             app:srcCompat="@drawable/delete" />
 
-        <ImageView
-            android:id="@+id/ivEdit"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:srcCompat="@drawable/baseline_mode_edit_24" />
-
-        <EditText
-            android:id="@+id/changeName"
-            android:layout_width="wrap_content"
-            android:layout_height="60dp"
-            android:layout_gravity="bottom"
-            android:ems="10"
-            android:hint="Uusi nimi"
-            android:inputType="text"
-            android:visibility="gone" />
     </LinearLayout>
 </androidx.appcompat.widget.LinearLayoutCompat>
