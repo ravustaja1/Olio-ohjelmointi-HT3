@@ -14,6 +14,24 @@ public class Storage {
     private static Storage storage = null;
 
     protected ArrayList<Lutemon> lutemons = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemonsAtTF = new ArrayList<>();
+
+    public ArrayList<Lutemon> getLutemonArrayList() {
+        return lutemons;
+    }
+    public ArrayList<Lutemon> getLutemonsAtArena() {
+        return lutemonsAtArena;
+    }
+
+    public ArrayList<Lutemon> getLutemonsAtHome() {
+        return lutemonsAtHome;
+    }
+
+    public ArrayList<Lutemon> getLutemonsAtTF() {
+        return lutemonsAtTF;
+    }
 
     private Storage(){
     }
@@ -60,10 +78,6 @@ public class Storage {
             System.out.println("Lutemoni ID:llä " + lutemons.get(i).id + " nimellä " + lutemons.get(i).name + " " + lutemons.get(i).color);
             i++;
         }
-    }
-
-    public ArrayList<Lutemon> getLutemonArrayList() {
-        return lutemons;
     }
 
     public void loadLutemons(Context context) {
