@@ -98,7 +98,7 @@ public class BattlefieldActivity extends AppCompatActivity {
             sb.append(l1.color + "(" + l1.name + ")" + " hyökkää " + l2.color + "(" + l2.name + ")" + "\n");
             l2.defense(l1);
             if (l2.health > 0) {
-                sb.append(l2.color + "(" + l1.name + ")" + "selvisi hengissä!\n");
+                sb.append(l2.color + "(" + l1.name + ")" + " selvisi hengissä!\n");
             } else {
                 sb.append(l2.color + "(" + l2.name + ")" + "kuoli.\n");
                 break;
