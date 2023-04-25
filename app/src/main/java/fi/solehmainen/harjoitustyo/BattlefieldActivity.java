@@ -98,11 +98,8 @@ public class BattlefieldActivity extends AppCompatActivity {
         Lutemon l2 = fighters.get(1);
         StringBuilder sb = new StringBuilder();
 
-
         sb.append("1: " + l1.color + "(" + l1.name + ")" + " att: " + l1.attack + " def: " + l1.defense + " exp: " + l1.experience + " HP: " + l1.health + "/" + l1.maxHealth + "\n");
         sb.append("2: " + l2.color + "(" + l2.name + ")" + " att: " + l2.attack + " def: " + l2.defense + " exp: " + l2.experience + " HP: " + l2.health + "/" + l2.maxHealth + "\n");
-
-
 
         while ((l1.health > 0) || (l2.health > 0)) {
 
@@ -116,7 +113,6 @@ public class BattlefieldActivity extends AppCompatActivity {
                 sb.append(l2.color + "(" + l2.name + ")" + "kuoli.\n");
                 break;
             }
-
 
             sb.append(l2.color + "(" + l2.name + ")" + " hyökkää " + l1.color + "(" + l1.name + ")" + "\n");
             l1.defense(l2);
