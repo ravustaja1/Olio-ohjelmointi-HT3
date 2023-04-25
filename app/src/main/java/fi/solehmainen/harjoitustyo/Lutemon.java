@@ -50,11 +50,7 @@ public class Lutemon implements Serializable {
     public int getId() {
         return id;
     }
-/*
-    public void setName(String name) {
-        this.name = name;
-    }
-*/
+
     private int idCounter() {
         int id;
 
@@ -86,9 +82,8 @@ public class Lutemon implements Serializable {
     }
 
     public int attack() {
-        int dmg = this.attack; // Laitoin nollaksi, koska valittaa, että variablea ei ole alustettu.
-        // Toiminnallisuus tänne. Tarkoituksena palauttaa damagea tehty int arvo.
-        // Tähän voisi esim käyttää sitä math -kirjastoa, että onko vaikka jokin tietty % -mahdollisuus tehdä tupla dmg tms?
+        int dmg = this.attack;
+
         return dmg;
     }
 
