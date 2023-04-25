@@ -110,23 +110,18 @@ public class CreateLutemonActivity extends AppCompatActivity {
         switch (radioGroup.getCheckedRadioButtonId()) {
             case R.id.rbWhite:
                 newLutemon = new White(lutemonName.getText().toString(), choice);
-                //color = "White";
                 break;
             case R.id.rbGreen:
                 newLutemon = new Green(lutemonName.getText().toString(), choice);
-                //color = "Green";
                 break;
             case R.id.rbPink:
                 newLutemon = new Pink(lutemonName.getText().toString(), choice);
-                //color = "Pink";
                 break;
             case R.id.rbOrange:
                 newLutemon = new Orange(lutemonName.getText().toString(), choice);
-                //color = "Orange";
                 break;
             case R.id.rbBlack:
                 newLutemon = new Black(lutemonName.getText().toString(), choice);
-                //color = "Black";
                 break;
         }
 
