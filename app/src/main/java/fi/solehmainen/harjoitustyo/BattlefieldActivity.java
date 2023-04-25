@@ -1,6 +1,7 @@
 package fi.solehmainen.harjoitustyo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +29,6 @@ public class BattlefieldActivity extends AppCompatActivity {
         linearLayout = findViewById(R.id.llFighters);
         textViewBattle = findViewById(R.id.tvBattle);
         fightButton = findViewById(R.id.btnFight);
-
 
         makeCheckBoxes();
 
