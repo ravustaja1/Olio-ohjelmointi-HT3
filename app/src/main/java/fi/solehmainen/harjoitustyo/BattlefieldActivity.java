@@ -114,8 +114,16 @@ public class BattlefieldActivity extends AppCompatActivity {
                 sb.append(l1.color + "(" + l1.name + ")" + " kuoli.\n");
                 break;
             }
-            textViewBattle.setText(sb);
+
+        }
+        /*
+        if (l1.health <= 0) {
+            sb.append(l1.color + "(" + l1.name + ")" + " kuoli.\n");
+        } else if (l2.health <= 0) {
+            sb.append(l2.color + "(" + l2.name + ")" + "kuoli.\n");
         }
 
+         */
+        textViewBattle.setText(sb);
     }
 }
