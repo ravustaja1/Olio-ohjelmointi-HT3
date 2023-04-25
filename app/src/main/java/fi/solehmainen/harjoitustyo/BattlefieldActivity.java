@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class BattlefieldActivity extends AppCompatActivity {
     private ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
@@ -93,9 +94,9 @@ public class BattlefieldActivity extends AppCompatActivity {
     where they recover to full health unless one has a 3rd lost figth which means death.
      */
     public void fight(ArrayList<Lutemon> fighters) {
-
         Lutemon l1 = fighters.get(0);
         Lutemon l2 = fighters.get(1);
+
         StringBuilder sb = new StringBuilder();
 
         sb.append("1: " + l1.color + "(" + l1.name + ")" + " att: " + l1.attack + " def: " + l1.defense + " exp: " + l1.experience + " HP: " + l1.health + "/" + l1.maxHealth + "\n");
