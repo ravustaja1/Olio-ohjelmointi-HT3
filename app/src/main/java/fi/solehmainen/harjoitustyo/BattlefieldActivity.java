@@ -88,42 +88,40 @@ public class BattlefieldActivity extends AppCompatActivity {
         Lutemon l1 = fighters.get(0);
         Lutemon l2 = fighters.get(1);
         StringBuilder sb = new StringBuilder();
+
+
         sb.append("1: " + l1.color + "(" + l1.name + ")" + " att: " + l1.attack + " def: " + l1.defense + " exp: " + l1.experience + " HP: " + l1.health + "/" + l1.maxHealth + "\n");
         sb.append("2: " + l2.color + "(" + l2.name + ")" + " att: " + l2.attack + " def: " + l2.defense + " exp: " + l2.experience + " HP: " + l2.health + "/" + l2.maxHealth + "\n");
 
 
 
-
         while ((l1.health > 0) || (l2.health > 0)) {
+
             sb.append(l1.color + "(" + l1.name + ")" + " hyökkää " + l2.color + "(" + l2.name + ")" + "\n");
             l2.defense(l1);
             if (l2.health > 0) {
                 sb.append(l2.color + "(" + l1.name + ")" + " selvisi hengissä!\n");
+                sb.append("1: " + l1.color + "(" + l1.name + ")" + " att: " + l1.attack + " def: " + l1.defense + " exp: " + l1.experience + " HP: " + l1.health + "/" + l1.maxHealth + "\n");
+                sb.append("2: " + l2.color + "(" + l2.name + ")" + " att: " + l2.attack + " def: " + l2.defense + " exp: " + l2.experience + " HP: " + l2.health + "/" + l2.maxHealth + "\n");
             } else {
                 sb.append(l2.color + "(" + l2.name + ")" + "kuoli.\n");
                 break;
             }
-            sb.append("1: " + l1.color + "(" + l1.name + ")" + " att: " + l1.attack + " def: " + l1.defense + " exp: " + l1.experience + " HP: " + l1.health + "/" + l1.maxHealth + "\n");
-            sb.append("2: " + l2.color + "(" + l2.name + ")" + " att: " + l2.attack + " def: " + l2.defense + " exp: " + l2.experience + " HP: " + l2.health + "/" + l2.maxHealth + "\n");
+
 
             sb.append(l2.color + "(" + l2.name + ")" + " hyökkää " + l1.color + "(" + l1.name + ")" + "\n");
             l1.defense(l2);
             if (l1.health > 0) {
                 sb.append(l1.color + "(" + l1.name + ")" + " selvisi hengissä!\n");
+                sb.append("1: " + l1.color + "(" + l1.name + ")" + " att: " + l1.attack + " def: " + l1.defense + " exp: " + l1.experience + " HP: " + l1.health + "/" + l1.maxHealth + "\n");
+                sb.append("2: " + l2.color + "(" + l2.name + ")" + " att: " + l2.attack + " def: " + l2.defense + " exp: " + l2.experience + " HP: " + l2.health + "/" + l2.maxHealth + "\n");
             } else {
                 sb.append(l1.color + "(" + l1.name + ")" + " kuoli.\n");
                 break;
             }
 
         }
-        /*
-        if (l1.health <= 0) {
-            sb.append(l1.color + "(" + l1.name + ")" + " kuoli.\n");
-        } else if (l2.health <= 0) {
-            sb.append(l2.color + "(" + l2.name + ")" + "kuoli.\n");
-        }
-
-         */
+        // Print the fight to the textfield
         textViewBattle.setText(sb);
     }
 }
