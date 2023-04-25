@@ -94,6 +94,7 @@ public class BattlefieldActivity extends AppCompatActivity {
     where they recover to full health unless one has a 3rd lost figth which means death.
      */
     public void fight(ArrayList<Lutemon> fighters) {
+
         Lutemon l1 = fighters.get(0);
         Lutemon l2 = fighters.get(1);
         StringBuilder sb = new StringBuilder();
@@ -128,5 +129,7 @@ public class BattlefieldActivity extends AppCompatActivity {
         }
         // Print the fight to the textfield
         textViewBattle.setText(sb);
+
+        //return ArrayList<Lutemon> fighters;
     }
 }
