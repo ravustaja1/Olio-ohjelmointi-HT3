@@ -32,6 +32,9 @@ public class BattlefieldActivity extends AppCompatActivity {
 
         makeCheckBoxes();
 
+        /*
+        When "Start Fight" button is pressed there will be made sure that 2 fighters are selected. If the condition applies, the fight starts.
+         */
         fightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
