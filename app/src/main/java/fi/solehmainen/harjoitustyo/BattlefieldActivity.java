@@ -46,24 +46,20 @@ public class BattlefieldActivity extends AppCompatActivity {
                 }
                 if (numchecked == 2) {
                     int y = 0;
-                    for (y=0; y<boxesChecked.size(); y++) {
-                        fighters.add(Storage.getInstance().getLutemon(y));
-                    }
-                    /*
-                    for (CheckBox c1 : boxesChecked){
+                    for (CheckBox c1 : boxes){
                         //c1.getId()
-                        fighters.add(Storage.getInstance().getLutemon(c1.getId()));
-
+                        if (boxes.get(y).isChecked()) {
+                            fighters.add(Storage.getInstance().getLutemon(c1.getId()));
+                        }
+                        y++;
                     }
-                    y++;
-                    */
-                    //fighters.add(Storage.getInstance().getLutemon(i));
+
                 } else {
                     System.out.println("Valitse vain kaksi taistelijaa!");
                     numchecked = 0;
                 }
                 for (Lutemon lutemon : fighters) {
-                    System.out.println(lutemon.getName() + "lisättiin taistelulistaan.");
+                    System.out.println(lutemon.getName() + " lisättiin taistelulistaan.");
                 }
             }
         });
