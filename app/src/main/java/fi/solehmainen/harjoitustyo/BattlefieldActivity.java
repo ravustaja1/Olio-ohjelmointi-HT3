@@ -47,17 +47,18 @@ public class BattlefieldActivity extends AppCompatActivity {
                 if (numchecked == 2) {
                     int y = 0;
                     for (CheckBox c1 : boxes){
-                        //c1.getId()
+
                         if (boxes.get(y).isChecked()) {
                             fighters.add(Storage.getInstance().getLutemon(c1.getId()));
                         }
                         y++;
                     }
-
+                    fight(fighters);
                 } else {
-                    System.out.println("Valitse vain kaksi taistelijaa!");
+                    System.out.println("Valitse tasan kaksi taistelijaa!");
                     numchecked = 0;
                 }
+                // Testi tulostus
                 for (Lutemon lutemon : fighters) {
                     System.out.println(lutemon.getName() + " lisättiin taistelulistaan.");
                 }
@@ -83,7 +84,38 @@ public class BattlefieldActivity extends AppCompatActivity {
 
     }
 
-    public void fight(Lutemon l1, Lutemon l2) {
+    public void fight(ArrayList<Lutemon> fighters) {
+        Lutemon l1 = fighters.get(0);
+        Lutemon l2 = fighters.get(1);
+        StringBuilder sb = new StringBuilder();
+        sb.append("1: " + l1.color + "(" + l1.name + ")" + " att: " + l1.attack + " def: " + l1.defense + " exp: " + l1.experience + " HP: " + l1.health + "/" + l1.maxHealth + "\n");
+        sb.append("2: " + l2.color + "(" + l2.name + ")" + " att: " + l2.attack + " def: " + l2.defense + " exp: " + l2.experience + " HP: " + l2.health + "/" + l2.maxHealth + "\n");
+
+
+
+
+        while ((l1.health > 0) || (l2.health > 0)) {
+            sb.append(l1.color + "(" + l1.name + ")" + " hyökkää " + l2.color + "(" + l2.name + ")" + "\n");
+            l2.defense(l1);
+            if (l2.health > 0) {
+                sb.append(l2.color + "(" + l1.name + ")" + "selvisi hengissä!\n");
+            } else {
+                sb.append(l2.color + "(" + l2.name + ")" + "kuoli.\n");
+                break;
+            }
+            sb.append("1: " + l1.color + "(" + l1.name + ")" + " att: " + l1.attack + " def: " + l1.defense + " exp: " + l1.experience + " HP: " + l1.health + "/" + l1.maxHealth + "\n");
+            sb.append("2: " + l2.color + "(" + l2.name + ")" + " att: " + l2.attack + " def: " + l2.defense + " exp: " + l2.experience + " HP: " + l2.health + "/" + l2.maxHealth + "\n");
+
+            sb.append(l2.color + "(" + l2.name + ")" + " hyökkää " + l1.color + "(" + l1.name + ")" + "\n");
+            l1.defense(l2);
+            if (l1.health > 0) {
+                sb.append(l1.color + "(" + l1.name + ")" + " selvisi hengissä!\n");
+            } else {
+                sb.append(l1.color + "(" + l1.name + ")" + " kuoli.\n");
+                break;
+            }
+            textViewBattle.setText(sb);
+        }
 
     }
 }

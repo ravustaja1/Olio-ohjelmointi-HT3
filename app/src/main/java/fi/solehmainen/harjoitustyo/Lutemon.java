@@ -81,11 +81,12 @@ public class Lutemon implements Serializable {
     }
 
     public void defense(Lutemon lutemon) {
-        // Toiminnallisuus tänne
+        this.health = this.health - lutemon.attack() + this.defense;
+
     }
 
     public int attack() {
-        int dmg = 0; // Laitoin nollaksi, koska valittaa, että variablea ei ole alustettu.
+        int dmg = this.attack; // Laitoin nollaksi, koska valittaa, että variablea ei ole alustettu.
         // Toiminnallisuus tänne. Tarkoituksena palauttaa damagea tehty int arvo.
         // Tähän voisi esim käyttää sitä math -kirjastoa, että onko vaikka jokin tietty % -mahdollisuus tehdä tupla dmg tms?
         return dmg;
