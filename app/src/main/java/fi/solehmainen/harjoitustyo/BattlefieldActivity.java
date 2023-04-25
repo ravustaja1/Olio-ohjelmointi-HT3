@@ -66,7 +66,9 @@ public class BattlefieldActivity extends AppCompatActivity {
         });
 
     }
-
+/*
+    Method used for creating checkboxes for fighters to pick from
+ */
     public void makeCheckBoxes() {
         lutemonsAtArena = Storage.getInstance().getLutemonArrayList();
         linearLayout.removeAllViews();
@@ -84,6 +86,10 @@ public class BattlefieldActivity extends AppCompatActivity {
 
     }
 
+    /*
+    Method takes in a list of two fighters who fight each other taking turns until one's HP is < 0. Winner gets a win point, loser a lost match. Lutemons are sent to Home
+    where they recover to full health unless one has a 3rd lost figth which means death.
+     */
     public void fight(ArrayList<Lutemon> fighters) {
         Lutemon l1 = fighters.get(0);
         Lutemon l2 = fighters.get(1);
