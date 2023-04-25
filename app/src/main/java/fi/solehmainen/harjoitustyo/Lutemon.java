@@ -85,16 +85,16 @@ public class Lutemon implements Serializable {
         return defeats;
     }
 
-    public void setExperience(int experience) {
-        this.experience = experience++;
+    public void setExperience(int exp) {
+        this.experience = this.experience + exp;
     }
 
-    public void setWins(int wins) {
-        this.wins = wins++;
+    public void setWins(int win) {
+        this.wins = this.wins + win;
     }
 
-    public void setDefeats(int defeats) {
-        this.defeats = defeats++;
+    public void setDefeats(int defeat) {
+        this.defeats = this.defeats + defeat;
     }
 
     private int idCounter() {
