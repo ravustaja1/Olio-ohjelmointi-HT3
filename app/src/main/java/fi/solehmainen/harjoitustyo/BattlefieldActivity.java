@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -58,7 +59,7 @@ public class BattlefieldActivity extends AppCompatActivity {
                     }
                     fight(fighters);
                 } else {
-                    System.out.println("Valitse tasan kaksi taistelijaa!");
+                    Toast.makeText(getApplicationContext(),"Valitse tasan kaksi taistelijaa!",Toast.LENGTH_SHORT).show();
                     numchecked = 0;
                 }
                 // Testi tulostus
