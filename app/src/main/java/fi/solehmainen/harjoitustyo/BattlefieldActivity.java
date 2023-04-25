@@ -111,6 +111,9 @@ public class BattlefieldActivity extends AppCompatActivity {
                 sb.append("2: " + l2.color + "(" + l2.name + ")" + " att: " + l2.attack + " def: " + l2.defense + " exp: " + l2.experience + " HP: " + l2.health + "/" + l2.maxHealth + "\n");
             } else {
                 sb.append(l2.color + "(" + l2.name + ")" + "kuoli.\n");
+                l2.defeats++;
+                l1.wins++;
+                l1.experience++;
                 break;
             }
 
@@ -122,6 +125,10 @@ public class BattlefieldActivity extends AppCompatActivity {
                 sb.append("2: " + l2.color + "(" + l2.name + ")" + " att: " + l2.attack + " def: " + l2.defense + " exp: " + l2.experience + " HP: " + l2.health + "/" + l2.maxHealth + "\n");
             } else {
                 sb.append(l1.color + "(" + l1.name + ")" + " kuoli.\n");
+                l1.defeats++;
+                l2.wins++;
+                l2.experience++;
+
                 break;
             }
 
