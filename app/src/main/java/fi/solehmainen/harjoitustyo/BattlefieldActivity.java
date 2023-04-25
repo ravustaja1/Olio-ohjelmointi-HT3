@@ -81,7 +81,7 @@ public class BattlefieldActivity extends AppCompatActivity {
         int i = 0;
         for (Lutemon l : lutemonsAtArena) {
             checkBox = new CheckBox(this);
-            checkBox.setText(l.getName());
+            checkBox.setText(l.getName() + "(" + l.getColor() + ")");
             checkBox.setId(i++);
             linearLayout.addView(checkBox);
             boxes.add(checkBox);
@@ -99,36 +99,36 @@ public class BattlefieldActivity extends AppCompatActivity {
 
         StringBuilder sb = new StringBuilder();
 
-        sb.append("1: " + l1.color + "(" + l1.name + ")" + " att: " + l1.attack + " def: " + l1.defense + " exp: " + l1.experience + " HP: " + l1.health + "/" + l1.maxHealth + "\n");
-        sb.append("2: " + l2.color + "(" + l2.name + ")" + " att: " + l2.attack + " def: " + l2.defense + " exp: " + l2.experience + " HP: " + l2.health + "/" + l2.maxHealth + "\n");
+        sb.append("1: " + l1.getColor() + "(" + l1.getName() + ")" + " att: " + l1.getAttack() + " def: " + l1.getDefense() + " exp: " + l1.getExperience() + " HP: " + l1.getHealth() + "/" + l1.maxHealth + "\n");
+        sb.append("2: " + l2.getColor() + "(" + l2.getName() + ")" + " att: " + l2.getAttack() + " def: " + l2.getDefense() + " exp: " + l2.getExperience() + " HP: " + l2.getHealth() + "/" + l2.maxHealth + "\n");
 
-        while ((l1.health > 0) || (l2.health > 0)) {
+        while ((l1.getHealth() > 0) || (l2.getHealth() > 0)) {
 
-            sb.append(l1.color + "(" + l1.name + ")" + " hyökkää " + l2.color + "(" + l2.name + ")" + "\n");
+            sb.append(l1.getColor() + "(" + l1.getName() + ")" + " hyökkää " + l2.getColor() + "(" + l2.getName() + ")" + "\n");
             l2.defense(l1);
-            if (l2.health > 0) {
-                sb.append(l2.color + "(" + l1.name + ")" + " selvisi hengissä!\n");
-                sb.append("1: " + l1.color + "(" + l1.name + ")" + " att: " + l1.attack + " def: " + l1.defense + " exp: " + l1.experience + " HP: " + l1.health + "/" + l1.maxHealth + "\n");
-                sb.append("2: " + l2.color + "(" + l2.name + ")" + " att: " + l2.attack + " def: " + l2.defense + " exp: " + l2.experience + " HP: " + l2.health + "/" + l2.maxHealth + "\n");
+            if (l2.getHealth() > 0) {
+                sb.append(l2.getColor() + "(" + l1.getName() + ")" + " selvisi hengissä!\n");
+                sb.append("1: " + l1.getColor() + "(" + l1.getName() + ")" + " att: " + l1.getAttack() + " def: " + l1.getDefense() + " exp: " + l1.getExperience() + " HP: " + l1.getHealth() + "/" + l1.getMaxHealth() + "\n");
+                sb.append("2: " + l2.getColor() + "(" + l2.getName() + ")" + " att: " + l2.getAttack() + " def: " + l2.getDefense() + " exp: " + l2.getExperience() + " HP: " + l2.getHealth() + "/" + l2.getMaxHealth() + "\n");
             } else {
-                sb.append(l2.color + "(" + l2.name + ")" + "kuoli.\n");
-                l2.defeats++;
-                l1.wins++;
-                l1.experience++;
+                sb.append(l2.getColor() + "(" + l2.getName() + ")" + "kuoli.\n");
+                l2.setDefeats(1);
+                l1.setWins(1);
+                l1.setExperience(1);
                 break;
             }
 
-            sb.append(l2.color + "(" + l2.name + ")" + " hyökkää " + l1.color + "(" + l1.name + ")" + "\n");
+            sb.append(l2.getColor() + "(" + l2.getName() + ")" + " hyökkää " + l1.getColor() + "(" + l1.getName() + ")" + "\n");
             l1.defense(l2);
-            if (l1.health > 0) {
-                sb.append(l1.color + "(" + l1.name + ")" + " selvisi hengissä!\n");
-                sb.append("1: " + l1.color + "(" + l1.name + ")" + " att: " + l1.attack + " def: " + l1.defense + " exp: " + l1.experience + " HP: " + l1.health + "/" + l1.maxHealth + "\n");
-                sb.append("2: " + l2.color + "(" + l2.name + ")" + " att: " + l2.attack + " def: " + l2.defense + " exp: " + l2.experience + " HP: " + l2.health + "/" + l2.maxHealth + "\n");
+            if (l1.getHealth() > 0) {
+                sb.append(l1.getColor() + "(" + l1.getName() + ")" + " selvisi hengissä!\n");
+                sb.append("1: " + l1.getColor() + "(" + l1.getName() + ")" + " att: " + l1.getAttack() + " def: " + l1.getDefense() + " exp: " + l1.getExperience() + " HP: " + l1.getHealth() + "/" + l1.getMaxHealth() + "\n");
+                sb.append("2: " + l2.getColor() + "(" + l2.getName() + ")" + " att: " + l2.getAttack() + " def: " + l2.getDefense() + " exp: " + l2.getExperience() + " HP: " + l2.getHealth() + "/" + l2.getMaxHealth() + "\n");
             } else {
-                sb.append(l1.color + "(" + l1.name + ")" + " kuoli.\n");
-                l1.defeats++;
-                l2.wins++;
-                l2.experience++;
+                sb.append(l1.getColor() + "(" + l1.getName() + ")" + " kuoli.\n");
+                l1.setDefeats(1);
+                l2.setWins(1);
+                l2.setExperience(1);
 
                 break;
             }

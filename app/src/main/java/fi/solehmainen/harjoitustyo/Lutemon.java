@@ -53,6 +53,50 @@ public class Lutemon implements Serializable {
         return id;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public int getMaxHealth() {
+        return maxHealth;
+    }
+
+    public int getWins() {
+        return wins;
+    }
+
+    public int getDefeats() {
+        return defeats;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience++;
+    }
+
+    public void setWins(int wins) {
+        this.wins = wins++;
+    }
+
+    public void setDefeats(int defeats) {
+        this.defeats = defeats++;
+    }
+
     private int idCounter() {
         int id;
 
