@@ -18,6 +18,7 @@ public class BattlefieldActivity extends AppCompatActivity {
     private Button fightButton;
     private TextView textViewBattle;
     private CheckBox checkBox;
+    private ArrayList<CheckBox> boxes = new ArrayList<>();
     private ArrayList<CheckBox> boxesChecked = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,32 +31,43 @@ public class BattlefieldActivity extends AppCompatActivity {
 
 
         makeCheckBoxes();
-        /*
-        if (checkBox.isChecked() && (checkBox.getId() == 0)) {
 
-        }
- */
         fightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int i = 0;
-                for (CheckBox c: boxesChecked) {
+                int numchecked = 0;
+                for (CheckBox c: boxes) {
                     if (c.isChecked()) {
-                        fighters.add(Storage.getInstance().getLutemon(i));
-                        System.out.println(fighters.get(i) + " Lutemon väriltä " + fighters.get(i).getName() + "lisättiin taistelulistaan.");
+                        numchecked++;
+                        boxesChecked.add(c);
                     }
+                    i++;
+                }
+                if (numchecked == 2) {
+                    int y = 0;
+                    for (y=0; y<boxesChecked.size(); y++) {
+                        fighters.add(Storage.getInstance().getLutemon(y));
+                    }
+                    /*
+                    for (CheckBox c1 : boxesChecked){
+                        //c1.getId()
+                        fighters.add(Storage.getInstance().getLutemon(c1.getId()));
+
+                    }
+                    y++;
+                    */
+                    //fighters.add(Storage.getInstance().getLutemon(i));
+                } else {
+                    System.out.println("Valitse vain kaksi taistelijaa!");
+                    numchecked = 0;
+                }
+                for (Lutemon lutemon : fighters) {
+                    System.out.println(lutemon.getName() + "lisättiin taistelulistaan.");
                 }
             }
         });
-/*
-        int i = 0;
-        for (CheckBox c: boxesChecked) {
-            if (c.isChecked()) {
-                fighters.add(Storage.getInstance().getLutemon(i));
-                System.out.println(fighters.get(i) + " Lutemon väriltä " + fighters.get(i).color + "lisättiin taistelulistaan.");
-            }
-        }
-*/
+
     }
 
     public void makeCheckBoxes() {
@@ -70,7 +82,7 @@ public class BattlefieldActivity extends AppCompatActivity {
             checkBox.setText(l.getName());
             checkBox.setId(i++);
             linearLayout.addView(checkBox);
-            boxesChecked.add(checkBox);
+            boxes.add(checkBox);
         }
 
     }
