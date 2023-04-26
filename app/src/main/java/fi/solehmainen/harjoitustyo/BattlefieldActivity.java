@@ -19,7 +19,9 @@ public class BattlefieldActivity extends AppCompatActivity {
     private LinearLayout linearLayout;
     private Button fightButton;
     private TextView textViewBattle;
+    private Random randomN = new Random();
     private CheckBox checkBox;
+
     private int numchecked = 0;
     private ArrayList<CheckBox> boxes = new ArrayList<>();
     private ArrayList<CheckBox> boxesChecked = new ArrayList<>();
@@ -34,12 +36,15 @@ public class BattlefieldActivity extends AppCompatActivity {
 
         makeCheckBoxes();
 
+        //int starter = randomStarter();
+
         /*
         When "Start Fight" button is pressed there will be made sure that 2 fighters are selected. If the condition applies, the fight starts.
          */
         fightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 int i = 0;
                 numchecked = 0;
 
@@ -78,6 +83,7 @@ public class BattlefieldActivity extends AppCompatActivity {
     public void makeCheckBoxes() {
         lutemonsAtArena = Storage.getInstance().getLutemonArrayList();
         linearLayout.removeAllViews();
+        boxes.clear();
 
 
         CheckBox checkBox;
@@ -97,10 +103,9 @@ public class BattlefieldActivity extends AppCompatActivity {
     where they recover to full health unless one has a 3rd lost figth which means death.
      */
     public void fight(ArrayList<Lutemon> fighters) {
-        int min = 0, max=1;
-        Random randomN = new Random();
-        int starter = min + randomN.nextInt(max);
-        System.out.println(starter);
+
+
+        System.out.println(randomStarter());
 
         Lutemon l1 = fighters.get(0);
         Lutemon l2 = fighters.get(1);
@@ -168,7 +173,17 @@ public class BattlefieldActivity extends AppCompatActivity {
 
         numchecked = 0;
         fighters.clear();
+
         makeCheckBoxes();
         //return ArrayList<Lutemon> fighters;
     }
+
+    public int randomStarter() {
+        int starter = 0;
+        int min=0, max=1;
+        starter = min + randomN.nextInt(max);
+        System.out.println(starter);
+        return starter;
+    }
+
 }
