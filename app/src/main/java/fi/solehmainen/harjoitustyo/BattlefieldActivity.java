@@ -79,7 +79,7 @@ public class BattlefieldActivity extends AppCompatActivity {
     Method used for creating checkboxes for fighters to pick from
  */
     public void makeCheckBoxes() {
-        lutemonsAtArena = Storage.getInstance().getLutemonArrayList();
+        lutemonsAtArena = Storage.getInstance().getLutemonsAtHome();
         linearLayout.removeAllViews();
         boxes.clear();
 
@@ -102,6 +102,7 @@ public class BattlefieldActivity extends AppCompatActivity {
      */
     public void fight(ArrayList<Lutemon> fighters) {
 
+        // Randomize the first attacker
         int starter = randomStarter();
         int second = -1;
         if (starter == 0) {
@@ -175,11 +176,11 @@ public class BattlefieldActivity extends AppCompatActivity {
         // Print the fight to the textfield
         textViewBattle.setText(sb);
 
+        // Prepare for next press of the "Fight" button
         numchecked = 0;
         fighters.clear();
-
         makeCheckBoxes();
-        //return ArrayList<Lutemon> fighters;
+
     }
 
     /*

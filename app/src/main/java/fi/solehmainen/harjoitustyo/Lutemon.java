@@ -43,10 +43,8 @@ public class Lutemon implements Serializable {
 
 
 
-        Storage.getInstance().lutemons.add(this);
+        Storage.getInstance().lutemonsAtHome.add(this);
 
-        // Tämä rivi on ihan vaan sitä varten, että saisi jotain printattua ulos
-        System.out.println("ID: " + this.id + " " + this.name + " niminen Lutemon värillä + " + this.color + " luotiin.");
     }
 
     public int getId() {
