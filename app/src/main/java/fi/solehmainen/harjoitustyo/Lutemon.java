@@ -127,7 +127,7 @@ public class Lutemon implements Serializable {
     }
 
     public void defense(Lutemon lutemon) {
-        this.health = this.health - lutemon.attack() + this.defense;
+        this.health = this.health + this.defense - lutemon.attack();
 
     }
 
