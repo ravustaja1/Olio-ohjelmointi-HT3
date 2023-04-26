@@ -185,6 +185,9 @@ public class BattlefieldActivity extends AppCompatActivity {
         //return ArrayList<Lutemon> fighters;
     }
 
+    /*
+    Method used for generating a random number which is later used in fight() to determine the first attacker
+     */
     public int randomStarter() {
         int starter = 0;
         int min=0, max=2;
