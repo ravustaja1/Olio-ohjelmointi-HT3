@@ -41,6 +41,7 @@ public class BattlefieldActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int i = 0;
+                numchecked = 0;
 
                 for (CheckBox c: boxes) {
                     if (c.isChecked()) {
