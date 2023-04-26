@@ -105,7 +105,7 @@ public class BattlefieldActivity extends AppCompatActivity {
         Lutemon l2 = fighters.get(1);
 
         StringBuilder sb = new StringBuilder();
-
+        textViewBattle.setText("");
         sb.append("1: " + l1.getColor() + "(" + l1.getName() + ")" + " att: " + l1.getAttack() + " def: " + l1.getDefense() + " exp: " + l1.getExperience() + " HP: " + l1.getHealth() + "/" + l1.getMaxHealth() + "\n");
         sb.append("2: " + l2.getColor() + "(" + l2.getName() + ")" + " att: " + l2.getAttack() + " def: " + l2.getDefense() + " exp: " + l2.getExperience() + " HP: " + l2.getHealth() + "/" + l2.getMaxHealth() + "\n");
 
