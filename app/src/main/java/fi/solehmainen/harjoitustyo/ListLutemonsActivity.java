@@ -9,11 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+
 public class ListLutemonsActivity extends AppCompatActivity {
 
     private Storage storage;
 
-
+    private ArrayList<Lutemon> lutemons = new ArrayList<>();
     private RecyclerView recyclerView;
 
     @Override
@@ -25,9 +27,10 @@ public class ListLutemonsActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.rvLutemonList);
 
 
+
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));;
         recyclerView.setAdapter(new LutemonListAdapter(getApplicationContext(), storage.getLutemonArrayList()));
-
 
 
     }

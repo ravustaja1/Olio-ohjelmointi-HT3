@@ -79,7 +79,7 @@ public class BattlefieldActivity extends AppCompatActivity {
     Method used for creating checkboxes for fighters to pick from
  */
     public void makeCheckBoxes() {
-        lutemonsAtArena = Storage.getInstance().getLutemonsAtHome();
+        lutemonsAtArena = Storage.getInstance().getLutemonArrayList();
         linearLayout.removeAllViews();
         boxes.clear();
 

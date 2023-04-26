@@ -18,9 +18,6 @@ public class Storage {
     protected ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
     protected ArrayList<Lutemon> lutemonsAtTF = new ArrayList<>();
 
-    public ArrayList<Lutemon> getLutemonArrayList() {
-        return lutemons;
-    }
     public ArrayList<Lutemon> getLutemonsAtArena() {
         return lutemonsAtArena;
     }
@@ -33,6 +30,10 @@ public class Storage {
         return lutemonsAtTF;
     }
 
+    public ArrayList<Lutemon> getLutemonArrayList() {
+
+        return lutemons;
+    }
     private Storage(){
     }
 
@@ -43,16 +44,7 @@ public class Storage {
         return storage;
     }
 
-    /* Tätä luokkaa en oikein ymmärrä. Onko tässä siis tarkoitus luoda se Olio, kun esim Homessa:kin on createLutemon, joka ottaa sisäänsä ja palauttaa lutemonin?
-    public Lutemon addLutemon() {
-        String name, color;
-        int attack, defense, experience, health, maxHealth;
-        Lutemon lutemon = new Lutemon(name, color, attack, defense, experience, health, maxHealth);
 
-        // Tähän pitää muuttaa lopuksi luotu Lutemon
-        return lutemon;
-    }
-    */
 
     public void removeLutemon(int id) {
         int i = 0;
@@ -65,11 +57,13 @@ public class Storage {
         lutemons.remove(i);
     }
 
+
     public Lutemon getLutemon(int id) {
 
         return lutemons.get(id);
     }
 
+/*
     public void listLutemons() {
         int i = 0;
 
@@ -79,8 +73,9 @@ public class Storage {
             i++;
         }
     }
-
+*/
     public void loadLutemons(Context context) {
+
         try {
             ObjectInputStream userReader = new ObjectInputStream(context.openFileInput("lutemons.data"));
             lutemons = (ArrayList<Lutemon>) userReader.readObject();
@@ -98,6 +93,7 @@ public class Storage {
     }
 
     public void saveLutemons(Context context) {
+
         try {
             ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("lutemons.data", Context.MODE_PRIVATE));
             userWriter.writeObject(lutemons);
