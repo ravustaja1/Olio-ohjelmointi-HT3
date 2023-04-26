@@ -45,7 +45,7 @@ public class Storage {
     }
 
 
-
+    // Remove a Lumeton by it's ID
     public void removeLutemon(int id) {
         int i = 0;
         for (Lutemon l : lutemons) {
@@ -57,7 +57,7 @@ public class Storage {
         lutemons.remove(i);
     }
 
-
+    // Return a Lutemon by it's id
     public Lutemon getLutemon(int id) {
 
         return lutemons.get(id);
@@ -74,6 +74,7 @@ public class Storage {
         }
     }
 */
+    // Load Lutemons from lutemons.data
     public void loadLutemons(Context context) {
 
         try {
@@ -92,6 +93,7 @@ public class Storage {
         }
     }
 
+    //Save Lutemons to lutemons.data
     public void saveLutemons(Context context) {
 
         try {

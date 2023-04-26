@@ -19,7 +19,6 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
         this.lutemons = lutemons;
     }
 
-
     @NonNull
     @Override
     public LutemonViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -48,7 +47,6 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
                 notifyItemRemoved(pos);
             }
         });
-
 
     }
 

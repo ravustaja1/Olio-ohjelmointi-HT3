@@ -20,7 +20,7 @@ public class BattlefieldActivity extends AppCompatActivity {
     private Button fightButton;
     private TextView textViewBattle;
     private Random randomN = new Random();
-    private CheckBox checkBox;
+    //private CheckBox checkBox;
 
     private int numchecked = 0;
     private ArrayList<CheckBox> boxes = new ArrayList<>();
@@ -37,7 +37,7 @@ public class BattlefieldActivity extends AppCompatActivity {
         makeCheckBoxes();
 
         /*
-        When "Start Fight" button is pressed there will be made sure that 2 fighters are selected. If the condition applies, the fight starts.
+        When "Start Fight" button is pressed it will be checked that 2 fighters are selected. If the condition applies, the fight starts.
          */
         fightButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,8 +164,6 @@ public class BattlefieldActivity extends AppCompatActivity {
                     l2.setWins(1);
                     l2.setExperience(1);
                 }
-
-
 
                 break;
             }

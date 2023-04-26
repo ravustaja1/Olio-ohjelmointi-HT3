@@ -42,10 +42,13 @@ public class CreateLutemonActivity extends AppCompatActivity {
         createLutemon = findViewById(R.id.btnCreate);
         previewImg = findViewById(R.id.ivPreviewImg);
         spinner = findViewById(R.id.spinner);
+       /*
         white = findViewById(R.id.rbWhite);
+        green = findViewById(R.id.rbGreen);
         pink = findViewById(R.id.rbPink);
-        pink = findViewById(R.id.rbPink);
-        orange = findViewById(R.id.rbBlack);
+        orange = findViewById(R.id.rbOrange);
+        black = findViewById(R.id.rbBlack);
+        */
         stats = findViewById(R.id.tvStats);
         radioGroup = findViewById(R.id.radioGroup);
         stats.setText("Luo itsellesi Lutemon!");
@@ -55,6 +58,9 @@ public class CreateLutemonActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         spinner.setAdapter(adapter);
 
+        /*
+        This listener changes the TextField to match the selected Radiobutton (Info of the Lutemon shown in txtField
+         */
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
@@ -79,6 +85,7 @@ public class CreateLutemonActivity extends AppCompatActivity {
             }
         });
 
+        // Spinner used for selecting an image for the Lutemon
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -102,6 +109,9 @@ public class CreateLutemonActivity extends AppCompatActivity {
         });
     }
 
+    /*
+    Lutemon and it's color created here by selecting from a Radiobutton. Spinner is used for selecting the image for the Lutemon
+     */
     public void createLutemon(View view){
         RadioGroup radioGroup = findViewById(R.id.radioGroup);
         Lutemon newLutemon = null;
