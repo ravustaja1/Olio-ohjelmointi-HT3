@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class BattlefieldActivity extends AppCompatActivity {
     private ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
@@ -104,11 +105,17 @@ public class BattlefieldActivity extends AppCompatActivity {
      */
     public void fight(ArrayList<Lutemon> fighters) {
 
+        int starter = randomStarter();
+        int second = -1;
+        if (starter == 0) {
+            second = 1;
+        } else {
+            second = 0;
+        }
 
-        System.out.println(randomStarter());
+        Lutemon l1 = fighters.get(starter);
+        Lutemon l2 = fighters.get(second);
 
-        Lutemon l1 = fighters.get(0);
-        Lutemon l2 = fighters.get(1);
 
         StringBuilder sb = new StringBuilder();
         textViewBattle.setText("");
@@ -180,9 +187,8 @@ public class BattlefieldActivity extends AppCompatActivity {
 
     public int randomStarter() {
         int starter = 0;
-        int min=0, max=1;
+        int min=0, max=2;
         starter = min + randomN.nextInt(max);
-        System.out.println(starter);
         return starter;
     }
 
