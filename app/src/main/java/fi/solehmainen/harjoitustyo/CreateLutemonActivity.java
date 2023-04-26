@@ -11,6 +11,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -124,7 +125,7 @@ public class CreateLutemonActivity extends AppCompatActivity {
                 newLutemon = new Black(lutemonName.getText().toString(), choice);
                 break;
         }
-
+        Toast.makeText(getApplicationContext(),"Lutemon luotu!",Toast.LENGTH_SHORT).show();
     }
 
 }

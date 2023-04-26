@@ -20,6 +20,7 @@ public class BattlefieldActivity extends AppCompatActivity {
     private Button fightButton;
     private TextView textViewBattle;
     private CheckBox checkBox;
+    private int numchecked = 0;
     private ArrayList<CheckBox> boxes = new ArrayList<>();
     private ArrayList<CheckBox> boxesChecked = new ArrayList<>();
     @Override
@@ -40,7 +41,7 @@ public class BattlefieldActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int i = 0;
-                int numchecked = 0;
+
                 for (CheckBox c: boxes) {
                     if (c.isChecked()) {
                         numchecked++;
@@ -95,6 +96,11 @@ public class BattlefieldActivity extends AppCompatActivity {
     where they recover to full health unless one has a 3rd lost figth which means death.
      */
     public void fight(ArrayList<Lutemon> fighters) {
+        int min = 0, max=1;
+        Random randomN = new Random();
+        int starter = min + randomN.nextInt(max);
+        System.out.println(starter);
+
         Lutemon l1 = fighters.get(0);
         Lutemon l2 = fighters.get(1);
 
@@ -112,10 +118,19 @@ public class BattlefieldActivity extends AppCompatActivity {
                 sb.append("1: " + l1.getColor() + "(" + l1.getName() + ")" + " att: " + l1.getAttack() + " def: " + l1.getDefense() + " exp: " + l1.getExperience() + " HP: " + l1.getHealth() + "/" + l1.getMaxHealth() + "\n");
                 sb.append("2: " + l2.getColor() + "(" + l2.getName() + ")" + " att: " + l2.getAttack() + " def: " + l2.getDefense() + " exp: " + l2.getExperience() + " HP: " + l2.getHealth() + "/" + l2.getMaxHealth() + "\n");
             } else {
-                sb.append(l2.getColor() + "(" + l2.getName() + ")" + " kuoli.\n");
                 l2.setDefeats(1);
-                l1.setWins(1);
-                l1.setExperience(1);
+                if (l2.getDefeats() == 3) {
+                    sb.append(l2.getColor() + "(" + l2.getName() + ")" + " kuoli.\n");
+                    l1.setWins(1);
+                    l1.setExperience(1);
+                    Storage.getInstance().removeLutemon(l2.getId());
+                } else {
+                    sb.append(l2.getColor() + "(" + l2.getName() + ")" + " hävisi.\n");
+                    //l2.setDefeats(1);
+                    l1.setWins(1);
+                    l1.setExperience(1);
+                }
+
                 break;
             }
 
@@ -126,18 +141,33 @@ public class BattlefieldActivity extends AppCompatActivity {
                 sb.append("1: " + l1.getColor() + "(" + l1.getName() + ")" + " att: " + l1.getAttack() + " def: " + l1.getDefense() + " exp: " + l1.getExperience() + " HP: " + l1.getHealth() + "/" + l1.getMaxHealth() + "\n");
                 sb.append("2: " + l2.getColor() + "(" + l2.getName() + ")" + " att: " + l2.getAttack() + " def: " + l2.getDefense() + " exp: " + l2.getExperience() + " HP: " + l2.getHealth() + "/" + l2.getMaxHealth() + "\n");
             } else {
-                sb.append(l1.getColor() + "(" + l1.getName() + ")" + " kuoli.\n");
                 l1.setDefeats(1);
-                l2.setWins(1);
-                l2.setExperience(1);
+                if (l1.getDefeats() == 3) {
+                    sb.append(l1.getColor() + "(" + l1.getName() + ")" + " kuoli.\n");
+                    l2.setWins(1);
+                    l2.setExperience(1);
+                    Storage.getInstance().removeLutemon(l1.getId());
+                } else {
+                    sb.append(l1.getColor() + "(" + l1.getName() + ")" + " hävisi.\n");
+                    //l1.setDefeats(1);
+                    l2.setWins(1);
+                    l2.setExperience(1);
+                }
+
+
 
                 break;
             }
 
         }
+        l1.setMaxHealth();
+        l2.setMaxHealth();
         // Print the fight to the textfield
         textViewBattle.setText(sb);
 
+        numchecked = 0;
+        fighters.clear();
+        makeCheckBoxes();
         //return ArrayList<Lutemon> fighters;
     }
 }

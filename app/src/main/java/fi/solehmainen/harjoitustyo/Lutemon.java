@@ -93,6 +93,10 @@ public class Lutemon implements Serializable {
         this.wins = this.wins + win;
     }
 
+    public void setMaxHealth() {
+        this.health = this.maxHealth;
+    }
+
     public void setDefeats(int defeat) {
         this.defeats = this.defeats + defeat;
     }
