@@ -12,7 +12,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class BattlefieldActivity extends AppCompatActivity {
     private ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
@@ -36,8 +35,6 @@ public class BattlefieldActivity extends AppCompatActivity {
         fightButton = findViewById(R.id.btnFight);
 
         makeCheckBoxes();
-
-        //int starter = randomStarter();
 
         /*
         When "Start Fight" button is pressed there will be made sure that 2 fighters are selected. If the condition applies, the fight starts.
