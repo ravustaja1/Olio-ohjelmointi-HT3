@@ -13,8 +13,8 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 import fi.solehmainen.harjoitustyo.Lutemon;
 import fi.solehmainen.harjoitustyo.R;
@@ -56,7 +56,8 @@ public class TrainFragment extends Fragment {
         RadioButton moveToArena = view.findViewById(R.id.rbArena);
 
         lutemonsAtTrain = Storage.getInstance().getLutemonsAtTrain();
-
+        lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
+        lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
 
         makeCheckBoxes();
         //makeRadioButtons();
@@ -71,8 +72,9 @@ public class TrainFragment extends Fragment {
 
                         if (boxes.get(i).isChecked()) {
                             //lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
-                            lutemonsAtArena.add(Storage.getInstance().getLutemon(c.getId()));
+                            //lutemonsAtArena.add(Storage.getInstance().getLutemon(c.getId()));
                             //Storage.getInstance().setLutemonsAtArena(lutemonsAtArena);
+                            addLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtArena);
 
                         }
                         i++;
@@ -87,9 +89,9 @@ public class TrainFragment extends Fragment {
 
                         if (boxes.get(i).isChecked()) {
                             //lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
-                            lutemonsAtHome.add(Storage.getInstance().getLutemon(c.getId()));
+                            //lutemonsAtHome.add(Storage.getInstance().getLutemon(c.getId()));
                             //Storage.getInstance().setLutemonsAtHome(lutemonsAtHome);
-
+                            addLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtHome);
                         }
                         i++;
                     }
@@ -120,6 +122,11 @@ public class TrainFragment extends Fragment {
         }
 
     }
+    public void addLutemon(Lutemon lutemon, ArrayList<Lutemon> list)
+    {
 
+        list.add(lutemon);
+
+    }
 
 }

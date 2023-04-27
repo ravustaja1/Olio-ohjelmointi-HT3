@@ -14,6 +14,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import fi.solehmainen.harjoitustyo.Lutemon;
 import fi.solehmainen.harjoitustyo.R;
@@ -56,6 +57,8 @@ public class HomeFragment extends Fragment {
 
 
         lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
+        lutemonsAtTrain = Storage.getInstance().getLutemonsAtTrain();
+        lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
 
         makeCheckBoxes();
 
@@ -70,9 +73,9 @@ public class HomeFragment extends Fragment {
                         if (boxes.get(i).isChecked()) {
 
                             //lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
-                            lutemonsAtArena.add(Storage.getInstance().getLutemon(c.getId()));
+                            //lutemonsAtArena.add(Storage.getInstance().getLutemon(c.getId()));
                             //Storage.getInstance().setLutemonsAtArena(lutemonsAtArena);
-
+                            Collections.swap(lutemonsAtHome, i, i-1);
                         }
                         i++;
                     }
