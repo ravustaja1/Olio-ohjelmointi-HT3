@@ -25,10 +25,10 @@
         android:text="Taisteluun!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llFight" />
+        app:layout_constraintTop_toBottomOf="@+id/llTrain" />
 
     <LinearLayout
-        android:id="@+id/llFight"
+        android:id="@+id/llTrain"
         android:layout_width="match_parent"
         android:layout_height="154dp"
         android:layout_marginTop="8dp"
@@ -54,7 +54,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tvHome"
+                android:id="@+id/tvTrain"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
 

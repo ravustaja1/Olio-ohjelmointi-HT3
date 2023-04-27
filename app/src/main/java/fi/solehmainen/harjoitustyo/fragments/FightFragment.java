@@ -12,12 +12,9 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Random;
 
 import fi.solehmainen.harjoitustyo.Lutemon;
 import fi.solehmainen.harjoitustyo.R;
@@ -51,7 +48,7 @@ public class FightFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_fight, container, false);
         linearLayout = view.findViewById(R.id.llFight);
-        textViewBattle = view.findViewById(R.id.tvHome);
+        textViewBattle = view.findViewById(R.id.tvFight);
         Button moveButton = view.findViewById(R.id.btnMove);
         RadioButton moveToArena = view.findViewById(R.id.rbArena);
         RadioButton moveToTrain = view.findViewById(R.id.rbTrain);

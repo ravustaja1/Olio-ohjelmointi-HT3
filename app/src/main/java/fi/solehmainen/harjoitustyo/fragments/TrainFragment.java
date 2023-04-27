@@ -44,11 +44,11 @@ public class TrainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_train, container, false);
 
 
-        linearLayout = view.findViewById(R.id.llHome);
-        TextView textViewHome = view.findViewById(R.id.tvHome);
+        linearLayout = view.findViewById(R.id.llTrain);
+        TextView textViewHome = view.findViewById(R.id.tvTrain);
         Button moveButton = view.findViewById(R.id.btnMove);
         RadioButton moveToHome = view.findViewById(R.id.rbHome);
         RadioButton moveToTrain = view.findViewById(R.id.rbTrain);
@@ -73,7 +73,8 @@ public class TrainFragment extends Fragment {
                             //lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
                             //lutemonsAtArena.add(Storage.getInstance().getLutemon(c.getId()));
                             //Storage.getInstance().setLutemonsAtArena(lutemonsAtArena);
-                            addLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtArena);
+                            //addLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtArena);
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtArena, lutemonsAtTrain);
 
                         }
                         i++;
