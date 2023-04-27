@@ -31,8 +31,6 @@ public class TrainFragment extends Fragment {
 
     private CheckBox checkBox;
 
-    private int numchecked = 0;
-    private ArrayList<RadioButton> buttons = new ArrayList<>();
     private ArrayList<CheckBox> boxes = new ArrayList<>();
     private ArrayList<CheckBox> boxesChecked = new ArrayList<>();
     @Override
@@ -72,7 +70,7 @@ public class TrainFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
+                            //lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
                             lutemonsAtArena.add(Storage.getInstance().getLutemon(c.getId()));
                             //Storage.getInstance().setLutemonsAtArena(lutemonsAtArena);
 
@@ -88,7 +86,7 @@ public class TrainFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
+                            //lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
                             lutemonsAtHome.add(Storage.getInstance().getLutemon(c.getId()));
                             //Storage.getInstance().setLutemonsAtHome(lutemonsAtHome);
 

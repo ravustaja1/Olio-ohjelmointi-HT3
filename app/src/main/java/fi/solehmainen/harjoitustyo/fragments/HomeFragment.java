@@ -24,15 +24,13 @@ public class HomeFragment extends Fragment {
     protected ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
     protected ArrayList<Lutemon> lutemonsAtTrain = new ArrayList<>();
     protected ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
-    private ArrayList<Lutemon> fighters = new ArrayList<>();
+
     private LinearLayout linearLayout;
     private Button moveButton;
     private TextView textViewHome;
 
     private CheckBox checkBox;
 
-    private int numchecked = 0;
-    private ArrayList<RadioButton> buttons = new ArrayList<>();
     private ArrayList<CheckBox> boxes = new ArrayList<>();
     private ArrayList<CheckBox> boxesChecked = new ArrayList<>();
     @Override
@@ -71,7 +69,7 @@ public class HomeFragment extends Fragment {
 
                         if (boxes.get(i).isChecked()) {
 
-                            lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
+                            //lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
                             lutemonsAtArena.add(Storage.getInstance().getLutemon(c.getId()));
                             //Storage.getInstance().setLutemonsAtArena(lutemonsAtArena);
 
@@ -87,7 +85,7 @@ public class HomeFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            lutemonsAtTrain = Storage.getInstance().getLutemonsAtTrain();
+                            //lutemonsAtTrain = Storage.getInstance().getLutemonsAtTrain();
                             lutemonsAtTrain.add(Storage.getInstance().getLutemon(c.getId()));
                             //Storage.getInstance().setLutemonsAtTrain(lutemonsAtTrain);
 
