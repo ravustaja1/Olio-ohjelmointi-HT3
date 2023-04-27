@@ -66,6 +66,7 @@ public class FightFragment extends Fragment {
         moveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (moveToHome.isChecked()) {
                     int i = 0;
 
@@ -74,7 +75,7 @@ public class FightFragment extends Fragment {
                         if (boxes.get(i).isChecked()) {
                             lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
                             lutemonsAtHome.add(Storage.getInstance().getLutemon(c.getId()));
-                            Storage.getInstance().setLutemonsAtArena(lutemonsAtHome);
+                            //Storage.getInstance().setLutemonsAtHome(lutemonsAtHome);
 
                         }
                         i++;
@@ -90,12 +91,14 @@ public class FightFragment extends Fragment {
                         if (boxes.get(i).isChecked()) {
                             lutemonsAtTrain = Storage.getInstance().getLutemonsAtTrain();
                             lutemonsAtTrain.add(Storage.getInstance().getLutemon(c.getId()));
-                            Storage.getInstance().setLutemonsAtArena(lutemonsAtTrain);
+                            //Storage.getInstance().setLutemonsAtArena(lutemonsAtTrain);
 
                         }
                         i++;
                     }
                 }
+
+
                 makeCheckBoxes();
             }
         });

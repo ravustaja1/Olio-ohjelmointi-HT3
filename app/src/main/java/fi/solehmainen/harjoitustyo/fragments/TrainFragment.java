@@ -74,7 +74,7 @@ public class TrainFragment extends Fragment {
                         if (boxes.get(i).isChecked()) {
                             lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
                             lutemonsAtArena.add(Storage.getInstance().getLutemon(c.getId()));
-                            Storage.getInstance().setLutemonsAtArena(lutemonsAtArena);
+                            //Storage.getInstance().setLutemonsAtArena(lutemonsAtArena);
 
                         }
                         i++;
@@ -90,7 +90,7 @@ public class TrainFragment extends Fragment {
                         if (boxes.get(i).isChecked()) {
                             lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
                             lutemonsAtHome.add(Storage.getInstance().getLutemon(c.getId()));
-                            Storage.getInstance().setLutemonsAtArena(lutemonsAtHome);
+                            //Storage.getInstance().setLutemonsAtHome(lutemonsAtHome);
 
                         }
                         i++;
