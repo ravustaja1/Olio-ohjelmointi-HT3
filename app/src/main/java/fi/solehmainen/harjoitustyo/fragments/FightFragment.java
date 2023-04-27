@@ -32,6 +32,7 @@ public class FightFragment extends Fragment {
 
     private int numchecked = 0;
     private ArrayList<CheckBox> boxes = new ArrayList<>();
+    private ArrayList<CheckBox> boxesChecked = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,11 +46,14 @@ public class FightFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fight, container, false);
 
-        linearLayout = findViewById(R.id.llFighters);
-        textViewBattle = findViewById(R.id.tvBattle);
-        fightButton = findViewById(R.id.btnFight);
+        View view = inflater.inflate(R.layout.fragment_fight, container, false);
+        fightButton = view.findViewById(R.id.btnFight);
+
+        linearLayout = view.findViewById(R.id.llFighters);
+        textViewBattle = view.findViewById(R.id.tvBattle);
+        fightButton = view.findViewById(R.id.btnFight);
+
 
         makeCheckBoxes();
 
@@ -80,7 +84,7 @@ public class FightFragment extends Fragment {
                     }
                     fight(fighters);
                 } else {
-                    Toast.makeText(getApplicationContext(),"Valitse tasan kaksi taistelijaa!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"Valitse tasan kaksi taistelijaa!",Toast.LENGTH_SHORT).show();
                     numchecked = 0;
                 }
                 // Testi tulostus
@@ -89,7 +93,7 @@ public class FightFragment extends Fragment {
                 }
             }
         });
-
+        //return inflater.inflate(R.layout.fragment_fight, container, false);
         return view;
     }
 
@@ -102,7 +106,7 @@ public class FightFragment extends Fragment {
         CheckBox checkBox;
         int i = 0;
         for (Lutemon l : lutemonsAtArena) {
-            checkBox = new CheckBox(this);
+            checkBox = new CheckBox(getContext());
             checkBox.setText(l.getName() + "(" + l.getColor() + ")");
             checkBox.setId(i++);
             linearLayout.addView(checkBox);

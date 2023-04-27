@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import fi.solehmainen.harjoitustyo.fragments.DeadFragment;
 import fi.solehmainen.harjoitustyo.fragments.FightFragment;
 import fi.solehmainen.harjoitustyo.fragments.HomeFragment;
+import fi.solehmainen.harjoitustyo.fragments.MoveFragment;
 import fi.solehmainen.harjoitustyo.fragments.TrainFragment;
 
 public class TabPagerAdapter extends FragmentStateAdapter {
@@ -27,7 +27,7 @@ public class TabPagerAdapter extends FragmentStateAdapter {
             case 2:
                 return new FightFragment();
             case 3:
-                return new DeadFragment();
+                return new MoveFragment();
             default:
                 return new HomeFragment();
         }
