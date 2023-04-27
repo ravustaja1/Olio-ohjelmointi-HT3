@@ -23,6 +23,8 @@ import fi.solehmainen.harjoitustyo.Storage;
 
 public class TrainFragment extends Fragment {
     private ArrayList<Lutemon> lutemonsAtTrain = new ArrayList<>();
+    private ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
+    private ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
     private ArrayList<Lutemon> fighters = new ArrayList<>();
     private LinearLayout linearLayout;
     private Button moveButton;
@@ -57,6 +59,8 @@ public class TrainFragment extends Fragment {
         RadioButton moveToArena = view.findViewById(R.id.rbArena);
 
         lutemonsAtTrain = Storage.getInstance().getLutemonsAtTrain();
+        lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
+        lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
 
         makeCheckBoxes();
         //makeRadioButtons();
@@ -72,7 +76,7 @@ public class TrainFragment extends Fragment {
                         if (boxes.get(i).isChecked()) {
 
                             Lutemon l = Storage.getInstance().getInstance().getLutemon(c.getId());
-                            Storage.getInstance().addLutemon(l, Storage.getInstance().getLutemonsAtArena());
+                            Storage.getInstance().addLutemonToArena(l);
 
                         }
                         i++;

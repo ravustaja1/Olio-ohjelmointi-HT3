@@ -69,7 +69,8 @@ public class HomeFragment extends Fragment {
 
                         if (boxes.get(i).isChecked()) {
 
-                            Storage.getInstance().getLutemonsAtHome().add(Storage.getInstance().getLutemon(c.getId()));
+                            Lutemon l = Storage.getInstance().getInstance().getLutemon(c.getId());
+                            Storage.getInstance().addLutemonToArena(l);
                         }
                         i++;
                     }
