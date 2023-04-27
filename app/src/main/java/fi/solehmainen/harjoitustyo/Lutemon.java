@@ -42,7 +42,7 @@ public class Lutemon implements Serializable {
 
 
 
-        Storage.getInstance().lutemons.add(this);
+        Storage.getInstance().lutemonsAtHome.add(this);
 
     }
 

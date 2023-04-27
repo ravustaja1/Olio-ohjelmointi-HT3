@@ -16,7 +16,7 @@ public class Storage {
     protected ArrayList<Lutemon> lutemons = new ArrayList<>();
     protected ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
     protected ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
-    protected ArrayList<Lutemon> lutemonsAtTF = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemonsAtTrain = new ArrayList<>();
 
     public ArrayList<Lutemon> getLutemonsAtArena() {
         return lutemonsAtArena;
@@ -26,8 +26,8 @@ public class Storage {
         return lutemonsAtHome;
     }
 
-    public ArrayList<Lutemon> getLutemonsAtTF() {
-        return lutemonsAtTF;
+    public ArrayList<Lutemon> getLutemonsAtTrain() {
+        return lutemonsAtTrain;
     }
 
     public ArrayList<Lutemon> getLutemonArrayList() {
@@ -44,6 +44,21 @@ public class Storage {
         return storage;
     }
 
+    public ArrayList<Lutemon> addLutemon(int id) {
+        int i = 0;
+        Lutemon lutemonToBeReturned = null;
+        ArrayList<Lutemon> toBeReturned = new ArrayList<>();
+        for (Lutemon l: lutemons) {
+            if (l.getId() == id) {
+                toBeReturned.add(lutemonToBeReturned);
+                break;
+            }
+            i++;
+        }
+
+
+        return toBeReturned;
+    }
 
     // Remove a Lumeton by it's ID
     public void removeLutemon(int id) {
@@ -63,9 +78,17 @@ public class Storage {
         return lutemons.get(id);
     }
 
+    public void moveLutemon(Lutemon lutemon, ArrayList<Lutemon> moveTo, ArrayList<Lutemon> moveFrom) {
+
+        moveTo.add(lutemon);
+        moveFrom.remove(lutemon);
+        System.out.println(lutemon + "siirrettiin listaan " + moveTo);
+        //Storage.getInstance().addLutemon(lutemon);
+    }
+
 /*
     public void listLutemons() {
-        int i = 0;
+        int i = 0;.
 
         System.out.println("Lutemonit:");
         for (Lutemon l: lutemons) {
@@ -95,6 +118,9 @@ public class Storage {
 
     //Save Lutemons to lutemons.data
     public void saveLutemons(Context context) {
+        lutemons.addAll(lutemonsAtTrain);
+        lutemons.addAll(lutemonsAtArena);
+        lutemons.addAll(lutemonsAtHome);
 
         try {
             ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("lutemons.data", Context.MODE_PRIVATE));

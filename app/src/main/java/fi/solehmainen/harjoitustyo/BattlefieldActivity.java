@@ -30,9 +30,9 @@ public class BattlefieldActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_battlefield);
 
-        linearLayout = findViewById(R.id.llFighters);
-        textViewBattle = findViewById(R.id.tvBattle);
-        fightButton = findViewById(R.id.btnFight);
+        linearLayout = findViewById(R.id.llFight);
+        textViewBattle = findViewById(R.id.tvHome);
+        fightButton = findViewById(R.id.btnMove);
 
         makeCheckBoxes();
 

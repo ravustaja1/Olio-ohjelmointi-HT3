@@ -25,9 +25,13 @@ public class ListLutemonsActivity extends AppCompatActivity {
 
         storage = Storage.getInstance();
         recyclerView = findViewById(R.id.rvLutemonList);
+        ArrayList<Lutemon> allLutemons = new ArrayList<>();
+        allLutemons.addAll(Storage.getInstance().getLutemonsAtHome());
+        allLutemons.addAll(Storage.getInstance().getLutemonsAtArena());
+        allLutemons.addAll(Storage.getInstance().getLutemonsAtTrain());
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));;
-        recyclerView.setAdapter(new LutemonListAdapter(getApplicationContext(), storage.getLutemonArrayList()));
+        recyclerView.setAdapter(new LutemonListAdapter(getApplicationContext(), allLutemons));
 
     }
 }
