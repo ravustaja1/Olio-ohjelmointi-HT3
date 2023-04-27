@@ -90,10 +90,13 @@ public class TrainFragment extends Fragment {
                         if (boxes.get(i).isChecked()) {
                             //lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
                             //lutemonsAtHome.add(Storage.getInstance().getLutemon(c.getId()));
+                            Lutemon toMove = null;
+                            toMove = Storage.getInstance().getLutemon(c.getId());
+                            lutemonsAtHome.add(toMove);
                             //Storage.getInstance().setLutemonsAtHome(lutemonsAtHome);
-                            addLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtHome);
                         }
                         i++;
+
                     }
                 }
 
