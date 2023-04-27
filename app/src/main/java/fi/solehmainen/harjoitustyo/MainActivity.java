@@ -57,4 +57,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void switchToMove(View view) {
+        Intent intent = new Intent(this, MoveActivity.class);
+        startActivity(intent);
+    }
+
+
 }
