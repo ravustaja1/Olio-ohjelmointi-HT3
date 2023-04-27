@@ -71,15 +71,11 @@ public class HomeFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-
-                            //lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
-                            //lutemonsAtArena.add(Storage.getInstance().getLutemon(c.getId()));
-                            //Storage.getInstance().setLutemonsAtArena(lutemonsAtArena);
-                            Collections.swap(lutemonsAtHome, i, i-1);
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtArena, lutemonsAtHome);
                         }
                         i++;
                     }
-                    makeCheckBoxes();
+
                 }
 
                 if (moveToTrain.isChecked()) {
@@ -88,9 +84,7 @@ public class HomeFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            //lutemonsAtTrain = Storage.getInstance().getLutemonsAtTrain();
-                            lutemonsAtTrain.add(Storage.getInstance().getLutemon(c.getId()));
-                            //Storage.getInstance().setLutemonsAtTrain(lutemonsAtTrain);
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtTrain, lutemonsAtHome);
 
                         }
                         i++;

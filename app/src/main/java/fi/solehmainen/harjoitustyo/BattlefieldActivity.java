@@ -34,6 +34,8 @@ public class BattlefieldActivity extends AppCompatActivity {
         textViewBattle = findViewById(R.id.tvTrain);
         fightButton = findViewById(R.id.btnMove);
 
+        lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
+
         makeCheckBoxes();
 
         /*
@@ -79,7 +81,7 @@ public class BattlefieldActivity extends AppCompatActivity {
     Method used for creating checkboxes for fighters to pick from
  */
     public void makeCheckBoxes() {
-        lutemonsAtArena = Storage.getInstance().getLutemonArrayList();
+        lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
         linearLayout.removeAllViews();
         boxes.clear();
 

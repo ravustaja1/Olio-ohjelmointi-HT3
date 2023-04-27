@@ -22,18 +22,6 @@ public class Storage {
         return lutemonsAtArena;
     }
 
-    public void setLutemonsAtArena(ArrayList<Lutemon> lutemonsAtArena) {
-        this.lutemonsAtArena = lutemonsAtArena;
-    }
-
-    public void setLutemonsAtHome(ArrayList<Lutemon> lutemonsAtHome) {
-        this.lutemonsAtHome = lutemonsAtHome;
-    }
-
-    public void setLutemonsAtTrain(ArrayList<Lutemon> lutemonsAtTrain) {
-        this.lutemonsAtTrain = lutemonsAtTrain;
-    }
-
     public ArrayList<Lutemon> getLutemonsAtHome() {
         return lutemonsAtHome;
     }
@@ -79,21 +67,9 @@ public class Storage {
 
         moveTo.add(lutemon);
         moveFrom.remove(lutemon);
-        System.out.println(lutemon + "siirrettiin listaan " + moveTo);
-        //Storage.getInstance().addLutemon(lutemon);
+
     }
 
-/*
-    public void listLutemons() {
-        int i = 0;.
-
-        System.out.println("Lutemonit:");
-        for (Lutemon l: lutemons) {
-            System.out.println("Lutemoni ID:llä " + lutemons.get(i).id + " nimellä " + lutemons.get(i).name + " " + lutemons.get(i).color);
-            i++;
-        }
-    }
-*/
     // Load Lutemons from lutemons.data
     public void loadLutemons(Context context) {
 

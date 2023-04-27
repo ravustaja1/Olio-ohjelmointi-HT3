@@ -41,8 +41,8 @@ public class Lutemon implements Serializable {
         this.image2 = R.drawable.delete;
 
 
-
-        Storage.getInstance().lutemonsAtTrain.add(this);
+        Storage.getInstance().lutemons.add(this);
+        Storage.getInstance().lutemonsAtHome.add(this);
 
     }
 

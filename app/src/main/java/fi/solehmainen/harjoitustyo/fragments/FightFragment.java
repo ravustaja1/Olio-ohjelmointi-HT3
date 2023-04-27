@@ -71,10 +71,7 @@ public class FightFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            //lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
-                            //lutemonsAtHome.add(Storage.getInstance().getLutemon(c.getId()));
-                            //Storage.getInstance().setLutemonsAtHome(lutemonsAtHome);
-                            Collections.swap(lutemonsAtArena, i,  i-1);
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtHome, lutemonsAtArena);
 
                         }
                         i++;
@@ -88,9 +85,7 @@ public class FightFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            //lutemonsAtTrain = Storage.getInstance().getLutemonsAtTrain();
-                            lutemonsAtTrain.add(Storage.getInstance().getLutemon(c.getId()));
-                            //Storage.getInstance().setLutemonsAtArena(lutemonsAtTrain);
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtTrain, lutemonsAtArena);
 
                         }
                         i++;
