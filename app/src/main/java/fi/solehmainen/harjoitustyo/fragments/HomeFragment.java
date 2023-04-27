@@ -64,14 +64,12 @@ public class HomeFragment extends Fragment {
             public void onClick(View v) {
                 if (moveToArena.isChecked()) {
                     int i = 0;
-                    Lutemon toBeMoved = null;
 
-                    for (CheckBox c : boxes) {
+                    for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), Storage.getInstance().getLutemonsAtHome(), Storage.getInstance().getLutemonsAtTrain());
-                            //fighters.add(Storage.getInstance().getLutemon(c.getId()));
 
+                            Storage.getInstance().getLutemonsAtHome().add(Storage.getInstance().getLutemon(c.getId()));
                         }
                         i++;
                     }

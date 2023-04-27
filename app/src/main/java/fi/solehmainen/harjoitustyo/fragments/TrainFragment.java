@@ -63,10 +63,21 @@ public class TrainFragment extends Fragment {
         moveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (moveToArena.isChecked()) {
                     int i = 0;
-                    Lutemon toBeMoved = null;
 
+                    for (CheckBox c : boxes){
+
+                        if (boxes.get(i).isChecked()) {
+
+                            Lutemon l = Storage.getInstance().getInstance().getLutemon(c.getId());
+                            Storage.getInstance().addLutemon(l, Storage.getInstance().getLutemonsAtArena());
+
+                        }
+                        i++;
+                    }
+/*
                     for (CheckBox c : boxes) {
 
                         if (boxes.get(i).isChecked()) {
@@ -76,6 +87,8 @@ public class TrainFragment extends Fragment {
                         }
                         i++;
                     }
+*/
+
 
                 }
                 makeCheckBoxes();

@@ -44,20 +44,9 @@ public class Storage {
         return storage;
     }
 
-    public ArrayList<Lutemon> addLutemon(int id) {
-        int i = 0;
-        Lutemon lutemonToBeReturned = null;
-        ArrayList<Lutemon> toBeReturned = new ArrayList<>();
-        for (Lutemon l: lutemons) {
-            if (l.getId() == id) {
-                toBeReturned.add(lutemonToBeReturned);
-                break;
-            }
-            i++;
-        }
+    public void addLutemon(Lutemon lutemon, ArrayList<Lutemon> toBeAdded) {
 
-
-        return toBeReturned;
+        toBeAdded.add(lutemon);
     }
 
     // Remove a Lumeton by it's ID
