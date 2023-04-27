@@ -117,11 +117,5 @@ public class TrainFragment extends Fragment {
         }
 
     }
-    public void addLutemon(Lutemon lutemon, ArrayList<Lutemon> list)
-    {
-
-        list.add(lutemon);
-
-    }
 
 }
