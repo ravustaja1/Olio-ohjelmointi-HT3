@@ -38,8 +38,14 @@ public class FightFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
         }
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_fight);
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_fight, container, false);
 
         linearLayout = findViewById(R.id.llFighters);
         textViewBattle = findViewById(R.id.tvBattle);
@@ -56,7 +62,6 @@ public class FightFragment extends Fragment {
 
                 int i = 0;
                 numchecked = 0;
-
                 for (CheckBox c: boxes) {
                     if (c.isChecked()) {
                         numchecked++;
@@ -84,13 +89,8 @@ public class FightFragment extends Fragment {
                 }
             }
         });
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fight, container, false);
+        return view;
     }
 
     public void makeCheckBoxes() {
