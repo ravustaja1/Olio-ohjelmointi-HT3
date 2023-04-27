@@ -14,7 +14,6 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import fi.solehmainen.harjoitustyo.Lutemon;
 import fi.solehmainen.harjoitustyo.R;
