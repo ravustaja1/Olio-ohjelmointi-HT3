@@ -22,6 +22,18 @@ public class Storage {
         return lutemonsAtArena;
     }
 
+    public void setLutemonsAtArena(ArrayList<Lutemon> lutemonsAtArena) {
+        this.lutemonsAtArena = lutemonsAtArena;
+    }
+
+    public void setLutemonsAtHome(ArrayList<Lutemon> lutemonsAtHome) {
+        this.lutemonsAtHome = lutemonsAtHome;
+    }
+
+    public void setLutemonsAtTrain(ArrayList<Lutemon> lutemonsAtTrain) {
+        this.lutemonsAtTrain = lutemonsAtTrain;
+    }
+
     public ArrayList<Lutemon> getLutemonsAtHome() {
         return lutemonsAtHome;
     }
@@ -118,9 +130,6 @@ public class Storage {
 
     //Save Lutemons to lutemons.data
     public void saveLutemons(Context context) {
-        lutemons.addAll(lutemonsAtTrain);
-        lutemons.addAll(lutemonsAtArena);
-        lutemons.addAll(lutemonsAtHome);
 
         try {
             ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("lutemons.data", Context.MODE_PRIVATE));

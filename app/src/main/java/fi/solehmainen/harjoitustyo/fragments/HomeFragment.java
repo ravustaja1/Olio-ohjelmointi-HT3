@@ -21,7 +21,9 @@ import fi.solehmainen.harjoitustyo.Storage;
 
 
 public class HomeFragment extends Fragment {
-    private ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemonsAtTrain = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
     private ArrayList<Lutemon> fighters = new ArrayList<>();
     private LinearLayout linearLayout;
     private Button moveButton;
@@ -68,13 +70,29 @@ public class HomeFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
+                            lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
+                            lutemonsAtArena.add(Storage.getInstance().getLutemon(c.getId()));
+                            Storage.getInstance().setLutemonsAtArena(lutemonsAtArena);
 
-                            Lutemon l = Storage.getInstance().getInstance().getLutemon(c.getId());
-                            Storage.getInstance().addLutemonToArena(l);
                         }
                         i++;
                     }
 
+                }
+
+                if (moveToTrain.isChecked()) {
+                    int i = 0;
+
+                    for (CheckBox c : boxes){
+
+                        if (boxes.get(i).isChecked()) {
+                            lutemonsAtTrain = Storage.getInstance().getLutemonsAtTrain();
+                            lutemonsAtTrain.add(Storage.getInstance().getLutemon(c.getId()));
+                            Storage.getInstance().setLutemonsAtArena(lutemonsAtTrain);
+
+                        }
+                        i++;
+                    }
                 }
                 makeCheckBoxes();
             }

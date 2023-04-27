@@ -22,10 +22,9 @@ import fi.solehmainen.harjoitustyo.Storage;
 
 
 public class TrainFragment extends Fragment {
-    private ArrayList<Lutemon> lutemonsAtTrain = new ArrayList<>();
-    private ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
-    private ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
-    private ArrayList<Lutemon> fighters = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemonsAtTrain = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
+    protected ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
     private LinearLayout linearLayout;
     private Button moveButton;
     private TextView textViewHome;
@@ -54,13 +53,12 @@ public class TrainFragment extends Fragment {
         linearLayout = view.findViewById(R.id.llHome);
         TextView textViewHome = view.findViewById(R.id.tvHome);
         Button moveButton = view.findViewById(R.id.btnMove);
-        RadioButton moveToHome = view.findViewById(R.id.rbTrain);
+        RadioButton moveToHome = view.findViewById(R.id.rbHome);
         RadioButton moveToTrain = view.findViewById(R.id.rbTrain);
         RadioButton moveToArena = view.findViewById(R.id.rbArena);
 
         lutemonsAtTrain = Storage.getInstance().getLutemonsAtTrain();
-        lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
-        lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
+
 
         makeCheckBoxes();
         //makeRadioButtons();
@@ -74,27 +72,31 @@ public class TrainFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-
-                            Lutemon l = Storage.getInstance().getInstance().getLutemon(c.getId());
-                            Storage.getInstance().addLutemonToArena(l);
-
-                        }
-                        i++;
-                    }
-/*
-                    for (CheckBox c : boxes) {
-
-                        if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), Storage.getInstance().getLutemonsAtTrain(), Storage.getInstance().getLutemonsAtHome());
-                            //fighters.add(Storage.getInstance().getLutemon(c.getId()));
+                            lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
+                            lutemonsAtArena.add(Storage.getInstance().getLutemon(c.getId()));
+                            Storage.getInstance().setLutemonsAtArena(lutemonsAtArena);
 
                         }
                         i++;
                     }
-*/
-
 
                 }
+
+                if (moveToHome.isChecked()) {
+                    int i = 0;
+
+                    for (CheckBox c : boxes){
+
+                        if (boxes.get(i).isChecked()) {
+                            lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
+                            lutemonsAtHome.add(Storage.getInstance().getLutemon(c.getId()));
+                            Storage.getInstance().setLutemonsAtArena(lutemonsAtHome);
+
+                        }
+                        i++;
+                    }
+                }
+
                 makeCheckBoxes();
             }
         });
