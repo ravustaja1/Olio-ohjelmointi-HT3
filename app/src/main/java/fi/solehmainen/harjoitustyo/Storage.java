@@ -56,21 +56,6 @@ public class Storage {
         return storage;
     }
 
-    public void addLutemonToArena(Lutemon lutemon) {
-
-        lutemonsAtArena.add(lutemon);
-    }
-
-    public void addLutemonToHome(Lutemon lutemon) {
-
-        lutemonsAtHome.add(lutemon);
-    }
-
-    public void addLutemonToTrain(Lutemon lutemon) {
-
-        lutemonsAtHome.add(lutemon);
-    }
-
 
     // Remove a Lumeton by it's ID
     public void removeLutemon(int id) {

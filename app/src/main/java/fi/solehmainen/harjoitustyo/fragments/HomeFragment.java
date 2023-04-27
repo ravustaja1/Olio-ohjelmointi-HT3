@@ -70,6 +70,7 @@ public class HomeFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
+
                             lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
                             lutemonsAtArena.add(Storage.getInstance().getLutemon(c.getId()));
                             //Storage.getInstance().setLutemonsAtArena(lutemonsAtArena);

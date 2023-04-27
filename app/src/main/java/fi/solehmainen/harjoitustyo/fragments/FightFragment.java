@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Random;
 
 import fi.solehmainen.harjoitustyo.Lutemon;
@@ -75,7 +77,8 @@ public class FightFragment extends Fragment {
                         if (boxes.get(i).isChecked()) {
                             lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
                             lutemonsAtHome.add(Storage.getInstance().getLutemon(c.getId()));
-                            //Storage.getInstance().setLutemonsAtHome(lutemonsAtHome);
+                            Storage.getInstance().setLutemonsAtHome(lutemonsAtHome);
+
 
                         }
                         i++;
