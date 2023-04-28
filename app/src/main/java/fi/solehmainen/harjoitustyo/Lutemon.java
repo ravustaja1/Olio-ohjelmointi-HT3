@@ -56,6 +56,7 @@ public class Lutemon implements Serializable {
         // required otherwise to keep the program working.
         Storage.getInstance().lutemonsAtHome.add(this);
 
+
     }
 
     public int getId() {

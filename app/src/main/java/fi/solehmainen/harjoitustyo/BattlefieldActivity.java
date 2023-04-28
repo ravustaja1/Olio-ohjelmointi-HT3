@@ -142,7 +142,7 @@ public class BattlefieldActivity extends AppCompatActivity {
                     lutemonsAtArena.remove(l2);
                     l1.hasTrained = false;
                     ArrayList<Lutemon> lutemons = new ArrayList<>();
-                    lutemons = Storage.getInstance().lutemons;
+                    lutemons = Storage.getInstance().getLutemonArrayList();
                     lutemons.remove(l2);
 
                 } else {
@@ -177,7 +177,7 @@ public class BattlefieldActivity extends AppCompatActivity {
                     lutemonsAtArena.remove(l1);
                     l2.hasTrained = false;
                     ArrayList<Lutemon> lutemons = new ArrayList<>();
-                    lutemons = Storage.getInstance().lutemons;
+                    lutemons = Storage.getInstance().getLutemonArrayList();
                     lutemons.remove(l1);
 
                 } else {
