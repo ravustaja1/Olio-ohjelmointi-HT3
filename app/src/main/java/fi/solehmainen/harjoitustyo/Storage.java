@@ -13,6 +13,10 @@ public class Storage {
 
     private static Storage storage = null;
 
+    public void setLutemonsAtHome(ArrayList<Lutemon> lutemonsAtHome) {
+        this.lutemonsAtHome = lutemonsAtHome;
+    }
+
     protected ArrayList<Lutemon> lutemons = new ArrayList<>();
     protected ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
     protected ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
@@ -87,6 +91,8 @@ public class Storage {
             System.out.println("Käyttäjien lukeminen ei onnistunut.");
             e.printStackTrace();
         }
+
+        setLutemonsAtHome(lutemons);
     }
 
     //Save Lutemons to lutemons.data
