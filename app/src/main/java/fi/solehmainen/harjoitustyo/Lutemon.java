@@ -16,7 +16,7 @@ public class Lutemon implements Serializable {
     protected int health;
     protected int maxHealth;
     protected int id;
-    private Random randomN;
+
 
     protected boolean hasTrained = false;
 
