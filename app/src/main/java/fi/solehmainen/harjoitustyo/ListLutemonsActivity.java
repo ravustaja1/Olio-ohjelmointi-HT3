@@ -15,7 +15,6 @@ public class ListLutemonsActivity extends AppCompatActivity {
 
     private Storage storage;
 
-    private ArrayList<Lutemon> lutemons = new ArrayList<>();
     private RecyclerView recyclerView;
 
     @Override
