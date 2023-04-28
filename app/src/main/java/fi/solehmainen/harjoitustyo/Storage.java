@@ -86,33 +86,17 @@ public class Storage {
                 return lutemons.get(idx);
         }
     }
-/*
-    public Lutemon moveToHome(Lutemon lutemon, ArrayList<Lutemon> removeFrom, ArrayList<Lutemon> moveTo) {
-        moveTo.add(lutemon);
-        removeFrom.remove(lutemon.getId());
-        return lutemon;
-    }
-    public Lutemon moveToArena(Lutemon lutemon, ArrayList<Lutemon> removeFrom, ArrayList<Lutemon> moveTo) {
-        moveTo.add(lutemon);
-        removeFrom.remove(lutemon);
-        return lutemon;
-    }
-    public Lutemon moveToTrain(Lutemon lutemon, ArrayList<Lutemon> removeFrom, ArrayList<Lutemon> moveTo) {
-        moveTo.add(lutemon);
-        removeFrom.remove(lutemon);
-        return lutemon;
-    }
-*/
+
     // Method used for moving a Lutemon from a list to another.
     public void moveLutemon(Lutemon lutemon, ArrayList<Lutemon> moveTo, ArrayList<Lutemon> moveFrom) {
 
         moveTo.add(lutemon);
         moveFrom.remove(lutemon);
 
-        /* Sort Lutemons in their list by their ID number.
+        // Sort Lutemons in their list by their ID number.
         Collections.sort(moveTo, Comparator.comparing(Lutemon::getId).thenComparing(Lutemon::getId));
         Collections.sort(moveFrom, Comparator.comparing(Lutemon::getId).thenComparing(Lutemon::getId));
-        */
+
 
 
     }
@@ -140,12 +124,15 @@ public class Storage {
         }
 
         setLutemonsAtHome(lutemons);
-        //setLutemons(lutemons);
 
     }
 
     //Save Lutemons to lutemons.data
     public void saveLutemons(Context context) {
+        lutemons.clear();
+        lutemons.addAll(lutemonsAtTrain);
+        lutemons.addAll(lutemonsAtArena);
+        lutemons.addAll(lutemonsAtHome);
 
         try {
             ObjectOutputStream userWriter = new ObjectOutputStream(context.openFileOutput("lutemons.data", Context.MODE_PRIVATE));

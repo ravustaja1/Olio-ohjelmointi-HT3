@@ -25,13 +25,12 @@ public class TrainFragment extends Fragment {
     protected ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
     protected ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
     private LinearLayout linearLayout;
-    private Button moveButton;
     private TextView textViewTrain;
 
     private CheckBox checkBox;
 
     private ArrayList<CheckBox> boxes = new ArrayList<>();
-    private ArrayList<CheckBox> boxesChecked = new ArrayList<>();
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +57,7 @@ public class TrainFragment extends Fragment {
         lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
         lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
 
-        makeCheckBoxes();
+        onResume();
 
         StringBuilder sb = new StringBuilder();
         //makeRadioButtons();
@@ -73,9 +72,9 @@ public class TrainFragment extends Fragment {
 
                         if (boxes.get(i).isChecked()) {
                             Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "TRAIN"), lutemonsAtArena, lutemonsAtTrain);
-                            //sb.append("Lutemon " + lutemonsAtArena.get(c.getId()) + "siirtyi areenalle.\n");
-                            //textViewTrain.setText(sb);
-                            //Storage.getInstance().moveToArena(Storage.getInstance().getLutemon(c.getId()), lutemonsAtTrain, lutemonsAtArena);
+                            sb.append("Lutemon " + c.getText() + " siirtyi areenalle.\n");
+                            textViewTrain.setText(sb);
+
                         }
                         i++;
                     }
@@ -89,16 +88,16 @@ public class TrainFragment extends Fragment {
 
                         if (boxes.get(i).isChecked()) {
                             Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "TRAIN"), lutemonsAtHome, lutemonsAtTrain);
-                            //sb.append("Lutemon " + lutemonsAtHome.get(c.getId()) + "siirtyi kotiin.\n");
-                            //textViewTrain.setText(sb);
-                            //Storage.getInstance().moveToHome(Storage.getInstance().getLutemon(c.getId()), lutemonsAtTrain, lutemonsAtHome);
+                            sb.append("Lutemon " + c.getText() + " siirtyi kotiin.\n");
+                            textViewTrain.setText(sb);
+
                         }
                         i++;
 
                     }
                 }
 
-                makeCheckBoxes();
+                onResume();
             }
         });
 
@@ -127,5 +126,8 @@ public class TrainFragment extends Fragment {
     public void train() {
 
     }
-
+    public void onResume() {
+        super.onResume();
+        makeCheckBoxes();
+    }
 }
