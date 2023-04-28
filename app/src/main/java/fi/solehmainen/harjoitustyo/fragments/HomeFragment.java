@@ -101,7 +101,7 @@ public class HomeFragment extends Fragment {
 
         return view;
     }
-
+    // Method to create the checkboxes for Lutemons
     public void makeCheckBoxes() {
         lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
         linearLayout.removeAllViews();
@@ -119,7 +119,7 @@ public class HomeFragment extends Fragment {
         }
 
     }
-
+    // This makes the move visible when pressing the button
     public void onResume() {
         super.onResume();
         makeCheckBoxes();

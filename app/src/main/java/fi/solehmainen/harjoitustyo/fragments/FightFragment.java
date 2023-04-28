@@ -101,7 +101,7 @@ public class FightFragment extends Fragment {
 
         return view;
     }
-
+// Method to create the checkboxes for Lutemons
     public void makeCheckBoxes() {
         lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
         linearLayout.removeAllViews();
@@ -120,7 +120,7 @@ public class FightFragment extends Fragment {
 
     }
 
-
+// This makes the move visible when pressing the button
     public void onResume() {
         super.onResume();
         makeCheckBoxes();

@@ -104,7 +104,7 @@ public class TrainFragment extends Fragment {
 
         return view;
     }
-
+    // Method to create the checkboxes for Lutemons
     public void makeCheckBoxes() {
         lutemonsAtTrain = Storage.getInstance().getLutemonsAtTrain();
         linearLayout.removeAllViews();
@@ -126,6 +126,8 @@ public class TrainFragment extends Fragment {
     public void train() {
 
     }
+
+    // This makes the move visible when pressing the button
     public void onResume() {
         super.onResume();
         makeCheckBoxes();
