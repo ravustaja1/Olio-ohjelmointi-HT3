@@ -123,7 +123,7 @@ public class TrainFragment extends Fragment {
 
     }
 
-    public void train() {
+    public void train(Lutemon lutemon) {
 
     }
 
