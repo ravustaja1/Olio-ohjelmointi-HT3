@@ -74,6 +74,7 @@ public class Storage {
         return lutemons.get(idx);
     }
 
+    // Return a Lutemon by giving parameters index and target list to pick from
     public Lutemon getLutemon(int idx, String target) {
         switch (target) {
             case "HOME":
