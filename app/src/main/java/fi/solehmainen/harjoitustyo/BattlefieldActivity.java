@@ -124,7 +124,7 @@ public class BattlefieldActivity extends AppCompatActivity {
 
             /*
             StringBuilder appends the ongoing fight and it's happenings. L2 defends from the L1's attack. If one of the fighter's HP goes to < 0, he/she loses the fight. The winner receives +1 win, +1 exp and is set to
-            max health. The loser receives +1 lost fight and max health unless it is his/hers 3rd lost; then he dies and is removed from the game.
+            max health. The loser receives +1 lost fight and max health unless it is his/hers 3rd lost; then he dies and is removed from the game. After the match, both fighters' "hasTrained" attribute is set to false.
              */
             sb.append(l1.getColor() + "(" + l1.getName() + ")" + " hyökkää " + l2.getColor() + "(" + l2.getName() + ")" + "\n");
             l2.defense(l1);
