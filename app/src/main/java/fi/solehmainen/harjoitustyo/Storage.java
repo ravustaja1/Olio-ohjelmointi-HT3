@@ -123,8 +123,8 @@ public class Storage {
             e.printStackTrace();
         }
 
-        setLutemonsAtHome(lutemons);
-
+        //setLutemonsAtHome(lutemons);
+        Storage.getInstance().setLutemonsAtHome(lutemons);
     }
 
     //Save Lutemons to lutemons.data
