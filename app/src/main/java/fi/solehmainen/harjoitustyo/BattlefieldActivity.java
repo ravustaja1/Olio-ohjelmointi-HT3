@@ -117,8 +117,13 @@ public class BattlefieldActivity extends AppCompatActivity {
         sb.append("1: " + l1.getColor() + "(" + l1.getName() + ")" + " att: " + l1.getAttack() + " def: " + l1.getDefense() + " exp: " + l1.getExperience() + " HP: " + l1.getHealth() + "/" + l1.getMaxHealth() + "\n");
         sb.append("2: " + l2.getColor() + "(" + l2.getName() + ")" + " att: " + l2.getAttack() + " def: " + l2.getDefense() + " exp: " + l2.getExperience() + " HP: " + l2.getHealth() + "/" + l2.getMaxHealth() + "\n");
 
+        // While loop which keeps the fight going on until one loses
         while ((l1.getHealth() > 0) || (l2.getHealth() > 0)) {
 
+            /*
+            StringBuilder appends the ongoing fight and it's happenings. L2 defends from the L1's attack. If one of the fighter's HP goes to < 0, he/she loses the fight. The winner receives +1 win, +1 exp and is set to
+            max health. The loser receives +1 lost fight and max health unless it is his/hers 3rd lost; then he dies and is removed from the game.
+             */
             sb.append(l1.getColor() + "(" + l1.getName() + ")" + " hyökkää " + l2.getColor() + "(" + l2.getName() + ")" + "\n");
             l2.defense(l1);
             if (l2.getHealth() > 0) {
@@ -148,7 +153,10 @@ public class BattlefieldActivity extends AppCompatActivity {
 
                 break;
             }
-
+            /*
+            StringBuilder appends the ongoing fight and it's happenings. L1 defends from the L2's attack. If one of the fighter's HP goes to < 0, he/she loses the fight. The winner receives +1 win, +1 exp and is set to
+            max health. The loser receives +1 lost fight and max health unless it is his/hers 3rd lost; then he dies and is removed from the game.
+             */
             sb.append(l2.getColor() + "(" + l2.getName() + ")" + " hyökkää " + l1.getColor() + "(" + l1.getName() + ")" + "\n");
             l1.defense(l2);
             if (l1.getHealth() > 0) {
@@ -182,7 +190,7 @@ public class BattlefieldActivity extends AppCompatActivity {
         }
 
 
-        // Print the fight to the textfield
+        // Print the fight's result to the textfield
         textViewBattle.setText(sb);
 
         // Prepare for next press of the "Fight" button
