@@ -72,9 +72,10 @@ public class TrainFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "ARENA"), lutemonsAtArena, lutemonsAtTrain);
-                            sb.append("Lutemon " + lutemonsAtArena.get(c.getId()) + "siirtyi areenalle.\n");
-                            textViewTrain.setText(sb);
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "TRAIN"), lutemonsAtArena, lutemonsAtTrain);
+                            //sb.append("Lutemon " + lutemonsAtArena.get(c.getId()) + "siirtyi areenalle.\n");
+                            //textViewTrain.setText(sb);
+                            //Storage.getInstance().moveToArena(Storage.getInstance().getLutemon(c.getId()), lutemonsAtTrain, lutemonsAtArena);
                         }
                         i++;
                     }
@@ -87,9 +88,10 @@ public class TrainFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "HOME"), lutemonsAtHome, lutemonsAtTrain);
-                            sb.append("Lutemon " + lutemonsAtHome.get(c.getId()) + "siirtyi kotiin.\n");
-                            textViewTrain.setText(sb);
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "TRAIN"), lutemonsAtHome, lutemonsAtTrain);
+                            //sb.append("Lutemon " + lutemonsAtHome.get(c.getId()) + "siirtyi kotiin.\n");
+                            //textViewTrain.setText(sb);
+                            //Storage.getInstance().moveToHome(Storage.getInstance().getLutemon(c.getId()), lutemonsAtTrain, lutemonsAtHome);
                         }
                         i++;
 
@@ -119,6 +121,10 @@ public class TrainFragment extends Fragment {
             linearLayout.addView(checkBox);
             boxes.add(checkBox);
         }
+
+    }
+
+    public void train() {
 
     }
 

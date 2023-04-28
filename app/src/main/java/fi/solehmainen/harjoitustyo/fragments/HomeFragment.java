@@ -72,9 +72,11 @@ public class HomeFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "ARENA"), lutemonsAtArena, lutemonsAtHome);
-                            sb.append("Lutemon " + lutemonsAtArena.get(c.getId()) + "siirtyi areenalle.\n");
-                            textViewHome.setText(sb);
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "HOME"), lutemonsAtArena, lutemonsAtHome);
+                            //sb.append("Lutemon " + lutemonsAtArena.get(c.getId()) + "siirtyi areenalle.\n");
+                            //textViewHome.setText(sb);
+
+                            //Storage.getInstance().moveToArena(Storage.getInstance().getLutemon(c.getId()), lutemonsAtHome, lutemonsAtArena);
                         }
                         i++;
                     }
@@ -87,9 +89,10 @@ public class HomeFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "TRAIN"), lutemonsAtTrain, lutemonsAtHome);
-                            sb.append("Lutemon " + lutemonsAtTrain.get(c.getId()) + "siirtyi treenaamaan.\n");
-                            textViewHome.setText(sb);
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "HOME"), lutemonsAtTrain, lutemonsAtHome);
+                            //sb.append("Lutemon " + lutemonsAtTrain.get(c.getId()) + "siirtyi treenaamaan.\n");
+                            //Storage.getInstance().moveToTrain(Storage.getInstance().getLutemon(c.getId()), lutemonsAtHome, lutemonsAtTrain);
+                            //textViewHome.setText(sb);
                         }
                         i++;
                     }

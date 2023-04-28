@@ -72,10 +72,11 @@ public class FightFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "HOME"), lutemonsAtHome, lutemonsAtArena);
-                            StringBuilder sb = new StringBuilder();
-                            sb.append("Lutemon " + lutemonsAtHome.get(c.getId()) + "siirtyi kotiin.\n");
-                            textViewBattle.setText(sb);
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "ARENA"), lutemonsAtHome, lutemonsAtArena);
+                            //StringBuilder sb = new StringBuilder();
+                            //sb.append("Lutemon " + lutemonsAtHome.get(c.getId()) + "siirtyi kotiin.\n");
+                            //textViewBattle.setText(sb);
+                            //Storage.getInstance().moveToHome(Storage.getInstance().getLutemon(c.getId()), lutemonsAtArena, lutemonsAtHome);
                         }
                         i++;
                     }
@@ -88,9 +89,12 @@ public class FightFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "TRAIN"), lutemonsAtTrain, lutemonsAtArena);
-                            sb.append("Lutemon " + lutemonsAtTrain.get(c.getId()) + "siirtyi treenaamaan.\n");
-                            textViewBattle.setText(sb);
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "ARENA"), lutemonsAtTrain, lutemonsAtArena);
+                            //Storage.getInstance().moveToTrain(Storage.getInstance().getLutemon(c.getId()), lutemonsAtArena, lutemonsAtTrain);
+                            System.out.println(c.getId() + "siirrettiin treeneihin.");
+                            //Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "TRAIN"), lutemonsAtTrain, lutemonsAtArena);
+                            //sb.append("Lutemon " + lutemonsAtTrain.get(c.getId()) + "siirtyi treenaamaan.\n");
+                            //textViewBattle.setText(sb);
                         }
                         i++;
                     }
