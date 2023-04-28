@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Storage {
     protected String name;
@@ -67,14 +69,19 @@ public class Storage {
         return lutemons.get(id);
     }
 
+    // Method used for moving a Lutemon from a list to another.
     public void moveLutemon(Lutemon lutemon, ArrayList<Lutemon> moveTo, ArrayList<Lutemon> moveFrom) {
 
         moveTo.add(lutemon);
         moveFrom.remove(lutemon);
 
+        // Sort Lutemons in their list by their ID number.
+        Collections.sort(moveTo, Comparator.comparing(Lutemon::getId).thenComparing(Lutemon::getId));
+        Collections.sort(moveFrom, Comparator.comparing(Lutemon::getId).thenComparing(Lutemon::getId));
+
     }
 
-    // Load Lutemons from lutemons.data
+    // Load Lutemons from lutemons.data and set them to home.
     public void loadLutemons(Context context) {
 
         try {
