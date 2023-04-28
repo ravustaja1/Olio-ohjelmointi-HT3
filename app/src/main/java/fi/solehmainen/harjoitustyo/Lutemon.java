@@ -1,7 +1,10 @@
 package fi.solehmainen.harjoitustyo;
 
 
+import androidx.core.math.MathUtils;
+
 import java.io.Serializable;
+import java.util.Random;
 
 public class Lutemon implements Serializable {
     protected int image, image2, image3;
@@ -13,6 +16,7 @@ public class Lutemon implements Serializable {
     protected int health;
     protected int maxHealth;
     protected int id;
+    private Random randomN;
 
     protected boolean hasTrained = false;
 
@@ -140,7 +144,7 @@ public class Lutemon implements Serializable {
     }
 
     public void defense(Lutemon lutemon) {
-        this.health = this.health + this.defense - lutemon.attack();
+        this.health = this.health + this.defense - lutemon.attack() - lutemon.experience;
 
     }
 
@@ -155,5 +159,10 @@ public class Lutemon implements Serializable {
         return idCounter;
     }
 
-
+    public int doubleDamage() {
+        int starter = 0;
+        int min=0, max=2;
+        starter = min + randomN.nextInt(max);
+        return starter;
+    }
 }
