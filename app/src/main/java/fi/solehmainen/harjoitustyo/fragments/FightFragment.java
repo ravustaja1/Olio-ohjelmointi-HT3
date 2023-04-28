@@ -60,6 +60,7 @@ public class FightFragment extends Fragment {
         lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
 
         makeCheckBoxes();
+        StringBuilder sb = new StringBuilder();
 
         moveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,8 +72,10 @@ public class FightFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtHome, lutemonsAtArena);
-
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "HOME"), lutemonsAtHome, lutemonsAtArena);
+                            StringBuilder sb = new StringBuilder();
+                            sb.append("Lutemon " + lutemonsAtHome.get(c.getId()) + "siirtyi kotiin.\n");
+                            textViewBattle.setText(sb);
                         }
                         i++;
                     }
@@ -85,8 +88,9 @@ public class FightFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtTrain, lutemonsAtArena);
-
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "TRAIN"), lutemonsAtTrain, lutemonsAtArena);
+                            sb.append("Lutemon " + lutemonsAtTrain.get(c.getId()) + "siirtyi treenaamaan.\n");
+                            textViewBattle.setText(sb);
                         }
                         i++;
                     }

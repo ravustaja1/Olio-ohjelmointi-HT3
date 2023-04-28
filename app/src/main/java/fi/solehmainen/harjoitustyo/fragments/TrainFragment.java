@@ -26,7 +26,7 @@ public class TrainFragment extends Fragment {
     protected ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
     private LinearLayout linearLayout;
     private Button moveButton;
-    private TextView textViewHome;
+    private TextView textViewTrain;
 
     private CheckBox checkBox;
 
@@ -48,7 +48,7 @@ public class TrainFragment extends Fragment {
 
 
         linearLayout = view.findViewById(R.id.llTrain);
-        TextView textViewHome = view.findViewById(R.id.tvTrain);
+        textViewTrain = view.findViewById(R.id.tvTrain);
         Button moveButton = view.findViewById(R.id.btnMove);
         RadioButton moveToHome = view.findViewById(R.id.rbHome);
         RadioButton moveToTrain = view.findViewById(R.id.rbTrain);
@@ -59,6 +59,8 @@ public class TrainFragment extends Fragment {
         lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
 
         makeCheckBoxes();
+
+        StringBuilder sb = new StringBuilder();
         //makeRadioButtons();
         moveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,8 +72,9 @@ public class TrainFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtArena, lutemonsAtTrain);
-
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "ARENA"), lutemonsAtArena, lutemonsAtTrain);
+                            sb.append("Lutemon " + lutemonsAtArena.get(c.getId()) + "siirtyi areenalle.\n");
+                            textViewTrain.setText(sb);
                         }
                         i++;
                     }
@@ -84,8 +87,9 @@ public class TrainFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtHome, lutemonsAtTrain);
-
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "HOME"), lutemonsAtHome, lutemonsAtTrain);
+                            sb.append("Lutemon " + lutemonsAtHome.get(c.getId()) + "siirtyi kotiin.\n");
+                            textViewTrain.setText(sb);
                         }
                         i++;
 

@@ -73,6 +73,19 @@ public class Storage {
         return lutemons.get(id);
     }
 
+    public Lutemon getLutemon(int id, String target) {
+        switch (target) {
+            case "HOME":
+                return lutemonsAtHome.get(id);
+            case "ARENA":
+                return lutemonsAtArena.get(id);
+            case "TRAIN":
+                return lutemonsAtTrain.get(id);
+            default:
+                return lutemons.get(id);
+        }
+    }
+
     // Method used for moving a Lutemon from a list to another.
     public void moveLutemon(Lutemon lutemon, ArrayList<Lutemon> moveTo, ArrayList<Lutemon> moveFrom) {
 
@@ -89,6 +102,10 @@ public class Storage {
 
     // Load Lutemons from lutemons.data and set them to home.
     public void loadLutemons(Context context) {
+        lutemons.clear();
+        lutemonsAtHome.clear();
+        lutemonsAtTrain.clear();
+        lutemonsAtArena.clear();
 
         try {
             ObjectInputStream userReader = new ObjectInputStream(context.openFileInput("lutemons.data"));

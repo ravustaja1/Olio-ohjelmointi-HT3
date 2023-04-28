@@ -61,6 +61,7 @@ public class HomeFragment extends Fragment {
         lutemonsAtArena = Storage.getInstance().getLutemonsAtArena();
 
         makeCheckBoxes();
+        StringBuilder sb = new StringBuilder();
 
         moveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +72,9 @@ public class HomeFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtArena, lutemonsAtHome);
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "ARENA"), lutemonsAtArena, lutemonsAtHome);
+                            sb.append("Lutemon " + lutemonsAtArena.get(c.getId()) + "siirtyi areenalle.\n");
+                            textViewHome.setText(sb);
                         }
                         i++;
                     }
@@ -84,8 +87,9 @@ public class HomeFragment extends Fragment {
                     for (CheckBox c : boxes){
 
                         if (boxes.get(i).isChecked()) {
-                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId()), lutemonsAtTrain, lutemonsAtHome);
-
+                            Storage.getInstance().moveLutemon(Storage.getInstance().getLutemon(c.getId(), "TRAIN"), lutemonsAtTrain, lutemonsAtHome);
+                            sb.append("Lutemon " + lutemonsAtTrain.get(c.getId()) + "siirtyi treenaamaan.\n");
+                            textViewHome.setText(sb);
                         }
                         i++;
                     }
