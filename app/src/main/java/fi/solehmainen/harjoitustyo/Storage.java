@@ -19,6 +19,10 @@ public class Storage {
         this.lutemonsAtHome = lutemonsAtHome;
     }
 
+    public void setLutemons(ArrayList<Lutemon> lutemons) {
+        this.lutemons = lutemons;
+    }
+
     protected ArrayList<Lutemon> lutemons = new ArrayList<>();
     protected ArrayList<Lutemon> lutemonsAtArena = new ArrayList<>();
     protected ArrayList<Lutemon> lutemonsAtHome = new ArrayList<>();
@@ -102,6 +106,8 @@ public class Storage {
         }
 
         setLutemonsAtHome(lutemons);
+        setLutemons(lutemons);
+
     }
 
     //Save Lutemons to lutemons.data

@@ -52,8 +52,8 @@
 
     <LinearLayout
         android:id="@+id/llFight"
-        android:layout_width="262dp"
-        android:layout_height="154dp"
+        android:layout_width="244dp"
+        android:layout_height="145dp"
         android:layout_marginTop="32dp"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
