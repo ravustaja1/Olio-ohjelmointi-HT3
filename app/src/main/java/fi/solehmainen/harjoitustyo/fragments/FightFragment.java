@@ -120,7 +120,7 @@ public class FightFragment extends Fragment {
 
     }
 
-// This makes the move visible when pressing the button
+// This makes the Lutemon boxes refresh visible when moving Lutemons around Arena/BF/Training
     public void onResume() {
         super.onResume();
         makeCheckBoxes();
