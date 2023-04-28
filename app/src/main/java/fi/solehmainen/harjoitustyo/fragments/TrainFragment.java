@@ -123,10 +123,11 @@ public class TrainFragment extends Fragment {
                             sb.append(c.getText() + " on jo treenannut!");
 
                         }
-                        textViewTrain.setText(sb);
+
                     }
                     i++;
                 }
+                textViewTrain.setText(sb);
             }
 
         });
