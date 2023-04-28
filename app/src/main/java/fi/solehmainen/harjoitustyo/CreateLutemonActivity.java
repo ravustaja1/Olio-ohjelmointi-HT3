@@ -42,13 +42,6 @@ public class CreateLutemonActivity extends AppCompatActivity {
         createLutemon = findViewById(R.id.btnCreate);
         previewImg = findViewById(R.id.ivPreviewImg);
         spinner = findViewById(R.id.spinner);
-       /*
-        white = findViewById(R.id.rbWhite);
-        green = findViewById(R.id.rbGreen);
-        pink = findViewById(R.id.rbPink);
-        orange = findViewById(R.id.rbOrange);
-        black = findViewById(R.id.rbBlack);
-        */
         stats = findViewById(R.id.tvStats);
         radioGroup = findViewById(R.id.radioGroup);
         stats.setText("Luo itsellesi Lutemon!");

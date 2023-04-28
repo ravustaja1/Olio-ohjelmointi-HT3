@@ -24,6 +24,7 @@ public class Lutemon implements Serializable {
 
     public Lutemon(String name, String color, int attack, int defense, int experience, int health, int maxHealth, int image) {
         this.name = name;
+        this.hasTrained = false;
         this.color = color;
         this.attack = attack;
         this.defense = defense;
@@ -55,6 +56,14 @@ public class Lutemon implements Serializable {
 
     public int getId() {
         return id;
+    }
+
+    public boolean HasTrained() {
+        return hasTrained;
+    }
+
+    public void setHasTrained(boolean hasTrained) {
+        this.hasTrained = hasTrained;
     }
 
     public String getColor() {

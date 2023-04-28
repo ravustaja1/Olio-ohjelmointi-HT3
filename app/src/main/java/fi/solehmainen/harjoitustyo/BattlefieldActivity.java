@@ -140,6 +140,7 @@ public class BattlefieldActivity extends AppCompatActivity {
                     l1.setExperience(1);
                     l1.setMaxHealth();
                     lutemonsAtArena.remove(l2);
+                    l1.hasTrained = false;
                     ArrayList<Lutemon> lutemons = new ArrayList<>();
                     lutemons = Storage.getInstance().lutemons;
                     lutemons.remove(l2);
@@ -150,6 +151,8 @@ public class BattlefieldActivity extends AppCompatActivity {
                     l1.setExperience(1);
                     l1.setMaxHealth();
                     l2.setMaxHealth();
+                    l2.hasTrained = false;
+                    l1.hasTrained = false;
                 }
 
                 break;
@@ -172,12 +175,15 @@ public class BattlefieldActivity extends AppCompatActivity {
                     l2.setExperience(1);
                     l2.setMaxHealth();
                     lutemonsAtArena.remove(l1);
+                    l2.hasTrained = false;
                     ArrayList<Lutemon> lutemons = new ArrayList<>();
                     lutemons = Storage.getInstance().lutemons;
                     lutemons.remove(l1);
 
                 } else {
                     sb.append(l1.getColor() + "(" + l1.getName() + ")" + " hävisi.\n");
+                    l2.hasTrained = false;
+                    l1.hasTrained = false;
                     l2.setWins(1);
                     l2.setExperience(1);
                     l1.setMaxHealth();

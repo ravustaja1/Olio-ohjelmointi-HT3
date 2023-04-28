@@ -1,9 +1,6 @@
 package fi.solehmainen.harjoitustyo.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +9,8 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+
+import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 
@@ -28,6 +27,7 @@ public class TrainFragment extends Fragment {
     private TextView textViewTrain;
 
     private CheckBox checkBox;
+    private Button train;
 
     private ArrayList<CheckBox> boxes = new ArrayList<>();
 
@@ -52,6 +52,7 @@ public class TrainFragment extends Fragment {
         RadioButton moveToHome = view.findViewById(R.id.rbHome);
         RadioButton moveToTrain = view.findViewById(R.id.rbTrain);
         RadioButton moveToArena = view.findViewById(R.id.rbArena);
+        Button train = view.findViewById(R.id.btnTrainHard);
 
         lutemonsAtTrain = Storage.getInstance().getLutemonsAtTrain();
         lutemonsAtHome = Storage.getInstance().getLutemonsAtHome();
@@ -97,10 +98,37 @@ public class TrainFragment extends Fragment {
                     }
                 }
 
+
+
                 onResume();
             }
         });
 
+        train.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                StringBuilder sb = new StringBuilder();
+                int i = 0;
+
+                for (CheckBox c : boxes) {
+
+                    if (boxes.get(i).isChecked()) {
+                        if (Storage.getInstance().getLutemon(c.getId()).HasTrained() == false) {
+                            Storage.getInstance().getLutemon(c.getId()).setHasTrained(true);
+                            Storage.getInstance().getLutemon(c.getId()).setExperience(1);
+                            sb.append(c.getText() + " treenasi lujaa!");
+                            textViewTrain.setText(sb);
+                        } else {
+                            sb.append(c.getText() + " on jo treenannut!");
+                            textViewTrain.setText(sb);
+                        }
+                    }
+                    i++;
+                }
+            }
+
+        });
 
         return view;
     }
@@ -123,7 +151,7 @@ public class TrainFragment extends Fragment {
 
     }
 
-    public void train(Lutemon lutemon) {
+    public void train() {
 
     }
 
