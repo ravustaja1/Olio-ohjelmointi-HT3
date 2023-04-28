@@ -154,15 +154,4 @@ public class Lutemon implements Serializable {
         return dmg;
     }
 
-    public int getNumberOfCreatedLutemons() {
-
-        return idCounter;
-    }
-
-    public int doubleDamage() {
-        int starter = 0;
-        int min=0, max=2;
-        starter = min + randomN.nextInt(max);
-        return starter;
-    }
 }
