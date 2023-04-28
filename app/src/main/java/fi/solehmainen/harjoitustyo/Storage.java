@@ -68,21 +68,21 @@ public class Storage {
     }
 
     // Return a Lutemon by it's id
-    public Lutemon getLutemon(int id) {
+    public Lutemon getLutemon(int idx) {
 
-        return lutemons.get(id);
+        return lutemons.get(idx);
     }
 
-    public Lutemon getLutemon(int id, String target) {
+    public Lutemon getLutemon(int idx, String target) {
         switch (target) {
             case "HOME":
-                return lutemonsAtHome.get(id);
+                return lutemonsAtHome.get(idx);
             case "ARENA":
-                return lutemonsAtArena.get(id);
+                return lutemonsAtArena.get(idx);
             case "TRAIN":
-                return lutemonsAtTrain.get(id);
+                return lutemonsAtTrain.get(idx);
             default:
-                return lutemons.get(id);
+                return lutemons.get(idx);
         }
     }
 
