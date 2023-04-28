@@ -79,6 +79,8 @@ public class Storage {
         Collections.sort(moveTo, Comparator.comparing(Lutemon::getId).thenComparing(Lutemon::getId));
         Collections.sort(moveFrom, Comparator.comparing(Lutemon::getId).thenComparing(Lutemon::getId));
 
+
+
     }
 
     // Load Lutemons from lutemons.data and set them to home.
