@@ -45,7 +45,7 @@ public class BattlefieldActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                int i = 0;
+
                 numchecked = 0;
 
                 for (CheckBox c: boxes) {
@@ -53,16 +53,15 @@ public class BattlefieldActivity extends AppCompatActivity {
                         numchecked++;
                         boxesChecked.add(c);
                     }
-                    i++;
                 }
                 if (numchecked == 2) {
                     int y = 0;
                     for (CheckBox c1 : boxes){
 
-                        if (boxes.get(y).isChecked()) {
+                        if (c1.isChecked()) {
                             fighters.add(Storage.getInstance().getLutemon(c1.getId()));
                         }
-                        y++;
+
                     }
                     fight(fighters);
                 } else {

@@ -25,7 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
-            android:text="Name" />
+            android:text="Name"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtLutemonColor"
@@ -53,7 +55,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
-            android:text="Exp" />
+            android:text="Exp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtLutemonMaxHealth"
@@ -74,7 +77,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
-            android:text="Wins" />
+            android:text="Wins"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtLutemonDefeats"
