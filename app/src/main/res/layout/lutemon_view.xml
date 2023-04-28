@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
-    android:background="#00BCD4"
+    android:background="#31D4BF00"
     android:orientation="horizontal">
 
 
@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             android:text="Name"
+            android:textColor="#504F4F"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -34,21 +35,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
-            android:text="Color" />
+            android:text="Color"
+            android:textColor="#504F4F" />
 
         <TextView
             android:id="@+id/txtLutemonAttack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
-            android:text="Attack" />
+            android:text="Attack"
+            android:textColor="#504F4F" />
 
         <TextView
             android:id="@+id/txtLutemonDefense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
-            android:text="Defense" />
+            android:text="Defense"
+            android:textColor="#504F4F" />
 
         <TextView
             android:id="@+id/txtLutemonExp"
@@ -56,6 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             android:text="Exp"
+            android:textColor="#504F4F"
             android:textStyle="bold" />
 
         <TextView
@@ -63,14 +68,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
-            android:text="MaxHP" />
+            android:text="MaxHP"
+            android:textColor="#504F4F" />
 
         <TextView
             android:id="@+id/txtLutemonHealth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
-            android:text="HP" />
+            android:text="HP"
+            android:textColor="#504F4F" />
 
         <TextView
             android:id="@+id/txtLutemonWins"
@@ -78,6 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
             android:text="Wins"
+            android:textColor="#504F4F"
             android:textStyle="bold" />
 
         <TextView
@@ -85,7 +93,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
-            android:text="Defeats" />
+            android:text="Defeats"
+            android:textColor="#504F4F" />
 
     </LinearLayout>
 
