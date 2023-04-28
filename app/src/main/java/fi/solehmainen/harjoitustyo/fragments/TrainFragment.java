@@ -114,9 +114,9 @@ public class TrainFragment extends Fragment {
                 for (CheckBox c : boxes) {
 
                     if (boxes.get(i).isChecked()) {
-                        if (Storage.getInstance().getLutemon(c.getId()).HasTrained() == false) {
-                            Storage.getInstance().getLutemon(c.getId()).setHasTrained(true);
-                            Storage.getInstance().getLutemon(c.getId()).setExperience(1);
+                        if (Storage.getInstance().getLutemon(c.getId(), "TRAIN").HasTrained() == false) {
+                            Storage.getInstance().getLutemon(c.getId(), "TRAIN").setHasTrained(true);
+                            Storage.getInstance().getLutemon(c.getId(), "TRAIN").setExperience(1);
                             sb.append(c.getText() + " treenasi lujaa!");
 
                         } else {
