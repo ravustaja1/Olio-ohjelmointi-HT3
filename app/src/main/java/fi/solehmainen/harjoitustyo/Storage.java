@@ -140,7 +140,7 @@ public class Storage {
         }
 
         setLutemonsAtHome(lutemons);
-        setLutemons(lutemons);
+        //setLutemons(lutemons);
 
     }
 
