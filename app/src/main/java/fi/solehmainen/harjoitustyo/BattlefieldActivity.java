@@ -57,11 +57,11 @@ public class BattlefieldActivity extends AppCompatActivity {
                     }
                 }
                 if (numchecked == 2) {
-                    int y = 0;
+
                     for (CheckBox c1 : boxes){
 
                         if (c1.isChecked()) {
-                            fighters.add(Storage.getInstance().getLutemon(c1.getId()));
+                            fighters.add(Storage.getInstance().getLutemon(c1.getId(), "ARENA"));
                         }
 
                     }
