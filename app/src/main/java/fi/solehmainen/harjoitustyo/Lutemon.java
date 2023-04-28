@@ -47,7 +47,7 @@ public class Lutemon implements Serializable {
         // Created lutemons are put to the Home list. I had started the work on Sunday and had done everything except the Fragments view
         // when it was declared that using lists (like this) isn't the proper way to to do it so I just left it because of major changes
         // required otherwise to keep the program working.
-        Storage.getInstance().lutemonsAtHome.add(this);
+        Storage.getInstance().lutemonsAtArena.add(this);
 
     }
 

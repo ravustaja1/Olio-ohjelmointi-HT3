@@ -69,10 +69,6 @@ public class BattlefieldActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Valitse tasan kaksi taistelijaa!",Toast.LENGTH_SHORT).show();
                     numchecked = 0;
                 }
-                // Testi tulostus
-                for (Lutemon lutemon : fighters) {
-                    System.out.println(lutemon.getName() + " lisättiin taistelulistaan.");
-                }
             }
         });
 
@@ -136,12 +132,19 @@ public class BattlefieldActivity extends AppCompatActivity {
                     sb.append(l2.getColor() + "(" + l2.getName() + ")" + " kuoli.\n");
                     l1.setWins(1);
                     l1.setExperience(1);
+                    l1.setMaxHealth();
+                    lutemonsAtArena.remove(l2);
+                    ArrayList<Lutemon> lutemons = new ArrayList<>();
+                    lutemons = Storage.getInstance().lutemons;
+                    lutemons.remove(l2.getId());
                     Storage.getInstance().removeLutemon(l2.getId());
                 } else {
                     sb.append(l2.getColor() + "(" + l2.getName() + ")" + " hävisi.\n");
                     //l2.setDefeats(1);
                     l1.setWins(1);
                     l1.setExperience(1);
+                    l1.setMaxHealth();
+                    l2.setMaxHealth();
                 }
 
                 break;
@@ -159,20 +162,27 @@ public class BattlefieldActivity extends AppCompatActivity {
                     sb.append(l1.getColor() + "(" + l1.getName() + ")" + " kuoli.\n");
                     l2.setWins(1);
                     l2.setExperience(1);
+                    l2.setMaxHealth();
+                    lutemonsAtArena.remove(l1);
+                    ArrayList<Lutemon> lutemons = new ArrayList<>();
+                    lutemons = Storage.getInstance().lutemons;
+                    lutemons.remove(l1.getId());
                     Storage.getInstance().removeLutemon(l1.getId());
                 } else {
                     sb.append(l1.getColor() + "(" + l1.getName() + ")" + " hävisi.\n");
                     //l1.setDefeats(1);
                     l2.setWins(1);
                     l2.setExperience(1);
+                    l1.setMaxHealth();
+                    l2.setMaxHealth();
                 }
 
                 break;
             }
 
         }
-        l1.setMaxHealth();
-        l2.setMaxHealth();
+
+
         // Print the fight to the textfield
         textViewBattle.setText(sb);
 
