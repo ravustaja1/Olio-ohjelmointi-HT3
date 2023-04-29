@@ -117,7 +117,10 @@ public class TrainFragment extends Fragment {
                         if (Storage.getInstance().getLutemon(c.getId(), "TRAIN").HasTrained() == false) {
                             Storage.getInstance().getLutemon(c.getId(), "TRAIN").setHasTrained(true);
                             Storage.getInstance().getLutemon(c.getId(), "TRAIN").setExperience(1);
+                            Storage.getInstance().getLutemon(c.getId(), "TRAIN").setTrains(1);
+
                             sb.append(c.getText() + " treenasi lujaa!");
+
 
                         } else {
                             sb.append(c.getText() + " on jo treenannut!");

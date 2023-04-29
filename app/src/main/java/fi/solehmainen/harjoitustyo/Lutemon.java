@@ -18,9 +18,10 @@ public class Lutemon implements Serializable {
     protected int id;
 
 
-    protected boolean hasTrained = false;
+    protected boolean hasTrained;
 
     protected int wins;
+    protected int trains;
 
     protected int defeats;
 
@@ -28,14 +29,15 @@ public class Lutemon implements Serializable {
 
     public Lutemon(String name, String color, int attack, int defense, int experience, int health, int maxHealth, int image) {
         this.name = name;
-        this.hasTrained = false;
         this.color = color;
         this.attack = attack;
         this.defense = defense;
         this.experience = experience;
         this.health = health;
         this.maxHealth = maxHealth;
+        this.hasTrained = false;
         this.wins = 0;
+        this.trains = 0;
         this.defeats = 0;
         this.id = idCounter();
         if (image == 0) {
@@ -73,6 +75,18 @@ public class Lutemon implements Serializable {
 
     public String getColor() {
         return color;
+    }
+
+    public boolean isHasTrained() {
+        return hasTrained;
+    }
+
+    public void setTrains(int trains) {
+        this.trains = this.trains + trains;
+    }
+
+    public int getTrains() {
+        return trains;
     }
 
     public int getAttack() {

@@ -29,15 +29,15 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
     public void onBindViewHolder(@NonNull LutemonViewHolder holder, int position) {
 
         holder.lutemonImage.setImageResource(lutemons.get(position).getImage());
-        holder.name.setText("Nimi: " + lutemons.get(position).name);
-        holder.color.setText("Väri: " + lutemons.get(position).color);
-        holder.attack.setText("Hyökkäys: " + String.valueOf(lutemons.get(position).attack));
-        holder.defense.setText("Puolustus: " + String.valueOf(lutemons.get(position).defense));
-        holder.experience.setText("Kokemus: " + String.valueOf(lutemons.get(position).experience));
-        holder.maxHealth.setText("Täydet elämäpisteet: " + String.valueOf(lutemons.get(position).maxHealth));
-        holder.health.setText("Elämäpisteet: " + String.valueOf(lutemons.get(position).health));
-        holder.wins.setText("Voitot: " + String.valueOf(lutemons.get(position).wins));
-        holder.defeats.setText("Tappiot: " + String.valueOf(lutemons.get(position).defeats));
+        holder.name.setText("Nimi: " + lutemons.get(position).getName());
+        holder.color.setText("Väri: " + lutemons.get(position).getColor());
+        holder.attack.setText("Hyökkäys: " + String.valueOf(lutemons.get(position).getAttack()));
+        holder.defense.setText("Puolustus: " + String.valueOf(lutemons.get(position).getDefense()));
+        holder.experience.setText("Kokemus: " + String.valueOf(lutemons.get(position).getExperience()));
+        holder.maxHealth.setText("Täydet elämäpisteet: " + String.valueOf(lutemons.get(position).getMaxHealth()));
+        holder.health.setText("Elämäpisteet: " + String.valueOf(lutemons.get(position).getHealth()));
+        holder.wins.setText("Voitot: " + String.valueOf(lutemons.get(position).getWins()));
+        holder.defeats.setText("Tappiot: " + String.valueOf(lutemons.get(position).getDefeats()));
         holder.delete.setImageResource(lutemons.get(position).getImage2());
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,8 +45,16 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
                 int pos = holder.getAdapterPosition();
                 Storage.getInstance().removeLutemon(lutemons.get(pos).getId());
                 notifyItemRemoved(pos);
+
             }
         });
+        holder.trained.setText("Harjoittelukertojen määrä: " + String.valueOf(lutemons.get(position).getTrains()));
+
+        if (lutemons.get(position).isHasTrained() == true) {
+            holder.exhausted.setText("Onko väsynyt: On");
+        } else {
+            holder.exhausted.setText("Onko väsynyt: Ei");
+        }
 
     }
 

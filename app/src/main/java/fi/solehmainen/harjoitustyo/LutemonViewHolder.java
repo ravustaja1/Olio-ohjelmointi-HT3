@@ -12,7 +12,7 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
     protected ImageView lutemonImage;
     protected ImageView delete;
 
-    TextView name, color, attack, defense, wins, defeats, experience, health, maxHealth;
+    TextView name, color, attack, defense, wins, defeats, experience, health, maxHealth, trained, exhausted;
     public LutemonViewHolder(@NonNull View itemView) {
         super(itemView);
 
@@ -25,7 +25,11 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
         maxHealth = itemView.findViewById(R.id.txtLutemonMaxHealth);
         health = itemView.findViewById(R.id.txtLutemonHealth);
         wins = itemView.findViewById(R.id.txtLutemonWins);
+        trained = itemView.findViewById(R.id.txtTrains);
         defeats = itemView.findViewById(R.id.txtLutemonDefeats);
         delete = itemView.findViewById(R.id.ivDelete);
+        exhausted = itemView.findViewById(R.id.txtExhausted);
+
+
     }
 }
