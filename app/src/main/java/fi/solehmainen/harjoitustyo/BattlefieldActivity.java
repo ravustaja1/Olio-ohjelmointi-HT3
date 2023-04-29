@@ -141,9 +141,9 @@ public class BattlefieldActivity extends AppCompatActivity {
                     l1.setMaxHealth();
                     lutemonsAtArena.remove(l2);
                     l1.hasTrained = false;
-                    ArrayList<Lutemon> lutemons = new ArrayList<>();
+                 /*   ArrayList<Lutemon> lutemons;
                     lutemons = Storage.getInstance().getLutemonArrayList();
-                    lutemons.remove(l2);
+                    lutemons.remove(l2);*/
 
                 } else {
                     sb.append(l2.getColor() + "(" + l2.getName() + ")" + " hävisi.\n");
@@ -176,9 +176,9 @@ public class BattlefieldActivity extends AppCompatActivity {
                     l2.setMaxHealth();
                     lutemonsAtArena.remove(l1);
                     l2.hasTrained = false;
-                    ArrayList<Lutemon> lutemons = new ArrayList<>();
+              /*      ArrayList<Lutemon> lutemons;
                     lutemons = Storage.getInstance().getLutemonArrayList();
-                    lutemons.remove(l1);
+                    lutemons.remove(l1);*/
 
                 } else {
                     sb.append(l1.getColor() + "(" + l1.getName() + ")" + " hävisi.\n");
