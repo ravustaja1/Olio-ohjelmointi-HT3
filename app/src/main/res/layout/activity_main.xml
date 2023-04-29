@@ -10,7 +10,7 @@
         android:id="@+id/btnAdd"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:onClick="switchToCreate"
         android:text="Lisää uusi Lutemon"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,9 +66,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Lataa Lutemonit"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSave" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSave"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -156,9 +156,6 @@ public class TrainFragment extends Fragment {
 
     }
 
-    public void train() {
-
-    }
 
     // This makes the move visible when pressing the button
     public void onResume() {
