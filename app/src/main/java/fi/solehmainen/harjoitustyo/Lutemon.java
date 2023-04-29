@@ -51,7 +51,7 @@ public class Lutemon implements Serializable {
 
         // I Know this wasn't kind of allowed. I still desided to leave it, because I had made the "delete" button already in the Stats view
         // and this helped a lot in it. I considered the button an additional feature which wasn't required so maybe it's +/- 0. Hopefully :)
-        Storage.getInstance().lutemons.add(this);
+        //Storage.getInstance().lutemons.add(this);
 
         // Created lutemons are put to the Home list. I had started the work on Sunday and had done everything except the Fragments view
         // when it was declared that using lists (like this) isn't the proper way to to do it so I just left it because of major changes

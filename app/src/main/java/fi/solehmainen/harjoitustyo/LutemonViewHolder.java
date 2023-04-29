@@ -27,7 +27,7 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
         wins = itemView.findViewById(R.id.txtLutemonWins);
         trained = itemView.findViewById(R.id.txtTrains);
         defeats = itemView.findViewById(R.id.txtLutemonDefeats);
-        delete = itemView.findViewById(R.id.ivDelete);
+        //delete = itemView.findViewById(R.id.ivDelete);
         exhausted = itemView.findViewById(R.id.txtExhausted);
 
 

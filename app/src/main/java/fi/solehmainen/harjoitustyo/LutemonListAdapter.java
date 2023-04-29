@@ -28,6 +28,7 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull LutemonViewHolder holder, int position) {
 
+
         holder.lutemonImage.setImageResource(lutemons.get(position).getImage());
         holder.name.setText("Nimi: " + lutemons.get(position).getName());
         holder.color.setText("Väri: " + lutemons.get(position).getColor());
@@ -38,7 +39,8 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
         holder.health.setText("Elämäpisteet: " + String.valueOf(lutemons.get(position).getHealth()));
         holder.wins.setText("Voitot: " + String.valueOf(lutemons.get(position).getWins()));
         holder.defeats.setText("Tappiot: " + String.valueOf(lutemons.get(position).getDefeats()));
-        holder.delete.setImageResource(lutemons.get(position).getImage2());
+        //holder.delete.setImageResource(lutemons.get(position).getImage2());
+        /*
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +50,7 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
 
             }
         });
+        */
         holder.trained.setText("Harjoittelukertojen määrä: " + String.valueOf(lutemons.get(position).getTrains()));
 
         if (lutemons.get(position).isHasTrained() == true) {
