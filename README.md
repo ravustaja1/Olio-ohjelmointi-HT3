@@ -1,3 +1,3 @@
 # Olio-ohjelmointi-HT
 
-https://youtu.be/E-pru2Dy1Ks
+https://www.youtube.com/watch?v=Sp3NlbRlKfY
