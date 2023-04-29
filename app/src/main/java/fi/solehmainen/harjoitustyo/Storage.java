@@ -125,7 +125,7 @@ public class Storage {
         }
 
 
-        //Storage.getInstance().setLutemonsAtHome(lutemons);
+        Storage.getInstance().setLutemonsAtHome(lutemons);
 
     }
 
