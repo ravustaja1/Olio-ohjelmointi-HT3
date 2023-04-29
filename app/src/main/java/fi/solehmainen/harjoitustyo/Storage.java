@@ -104,10 +104,6 @@ public class Storage {
 
     // Load Lutemons from lutemons.data and set them to home.
     public void loadLutemons(Context context) {
-        lutemons.clear();
-        lutemonsAtHome.clear();
-        lutemonsAtTrain.clear();
-        lutemonsAtArena.clear();
 
         try {
             ObjectInputStream userReader = new ObjectInputStream(context.openFileInput("lutemons.data"));
