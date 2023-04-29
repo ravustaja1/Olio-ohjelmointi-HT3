@@ -47,7 +47,7 @@ public class Lutemon implements Serializable {
         } else if (image == 2) {
             this.image = R.drawable.fighter;
         }
-        this.image2 = R.drawable.delete;
+
 
         // I Know this wasn't kind of allowed. I still desided to leave it, because I had made the "delete" button already in the Stats view
         // and this helped a lot in it. I considered the button an additional feature which wasn't required so maybe it's +/- 0. Hopefully :)
@@ -143,10 +143,6 @@ public class Lutemon implements Serializable {
 
     public int getImage() {
         return image;
-    }
-
-    public int getImage2() {
-        return image2;
     }
 
 
