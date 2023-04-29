@@ -124,8 +124,8 @@ public class Storage {
             e.printStackTrace();
         }
 
-        //setLutemonsAtHome(lutemons);
-        Storage.getInstance().setLutemonsAtHome(lutemons);
+
+        //Storage.getInstance().setLutemonsAtHome(lutemons);
 
     }
 
