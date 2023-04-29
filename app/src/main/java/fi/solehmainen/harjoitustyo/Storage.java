@@ -123,6 +123,7 @@ public class Storage {
 
         Storage.getInstance().setLutemonsAtHome(lutemons);
 
+
     }
 
     //Save Lutemons to lutemons.data

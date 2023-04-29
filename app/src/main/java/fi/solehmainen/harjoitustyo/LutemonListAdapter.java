@@ -39,18 +39,7 @@ public class LutemonListAdapter extends RecyclerView.Adapter<LutemonViewHolder> 
         holder.health.setText("Elämäpisteet: " + String.valueOf(lutemons.get(position).getHealth()));
         holder.wins.setText("Voitot: " + String.valueOf(lutemons.get(position).getWins()));
         holder.defeats.setText("Tappiot: " + String.valueOf(lutemons.get(position).getDefeats()));
-        //holder.delete.setImageResource(lutemons.get(position).getImage2());
-        /*
-        holder.delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int pos = holder.getAdapterPosition();
-                Storage.getInstance().removeLutemon(lutemons.get(pos).getId());
-                notifyItemRemoved(pos);
 
-            }
-        });
-        */
         holder.trained.setText("Harjoittelukertojen määrä: " + String.valueOf(lutemons.get(position).getTrains()));
 
         if (lutemons.get(position).isHasTrained() == true) {
