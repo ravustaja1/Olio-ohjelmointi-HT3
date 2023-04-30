@@ -129,7 +129,7 @@ public class BattlefieldActivity extends AppCompatActivity {
             sb.append(l1.getColor() + "(" + l1.getName() + ")" + " hyökkää " + l2.getColor() + "(" + l2.getName() + ")" + "\n");
             l2.defense(l1);
             if (l2.getHealth() > 0) {
-                sb.append(l2.getColor() + "(" + l1.getName() + ")" + " selvisi hengissä!\n");
+                sb.append(l2.getColor() + "(" + l2.getName() + ")" + " selvisi hengissä!\n");
                 sb.append("1: " + l1.getColor() + "(" + l1.getName() + ")" + " att: " + l1.getAttack() + " def: " + l1.getDefense() + " exp: " + l1.getExperience() + " HP: " + l1.getHealth() + "/" + l1.getMaxHealth() + "\n");
                 sb.append("2: " + l2.getColor() + "(" + l2.getName() + ")" + " att: " + l2.getAttack() + " def: " + l2.getDefense() + " exp: " + l2.getExperience() + " HP: " + l2.getHealth() + "/" + l2.getMaxHealth() + "\n");
             } else {
